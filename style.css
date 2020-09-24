@@ -1,0 +1,83 @@
+/**************COMMON***********/
+
+/*Import Raleway font*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/*Make Raleway the default font*/
+body
+{
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+
+/**************HERO***********/
+
+/*Apply flexbox layout to menu container*/
+.menu-container
+{
+    display: inline-flex;
+}
+
+/*Take off the underlining of the links*/
+a
+{
+    text-decoration: none;
+}
+
+/*Section container size and background*/
+.section-container
+{
+    background-color: #F2F2F2;
+    max-width: 70%;
+}
+
+/*Apply flexbox layout to thunmbnail container*/
+.thumbnail-container
+{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+h2
+{
+    padding-top: 40px;
+    padding-left: 40px;
+}
+
+/*Create vignette*/
+.img-container
+{
+    border-radius: 30px;
+    width: 300px;
+    background-color: white;
+    padding: 5px;
+}
+
+/*Modify the image inside of the thunmbnail*/
+img
+{
+    width: 300px;
+    height: 200px;
+    border-radius: 30px 30px 0px 0px;
+}
+
+p
+{
+    text-align: center;
+}
+
+
+/************ASIDE**********
+
+.aside-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+}*/

@@ -7,6 +7,13 @@
 
         <!--Lien vers le fichier CSS-->
         <link rel="stylesheet" href="style.css">
+        
+
+        <!-- Awesome font kit's code -->
+        <script src="https://kit.fontawesome.com/276c094cee.js" crossorigin="anonymous"></script>
+
+        
+
 
         <title>Reservia</title>
     </head>
@@ -14,22 +21,90 @@
         <div id="wrapper">
             <!-- <header>-->
             <header>           
-                <nav>
-                    <p>NAVIGATION MENU</p>
+                <nav class="menu-container">
+                    <img src="images/logo/Reservia.svg" alt="Reservia log">
+                    <a href="index.html">Hébergements</a>
+                    <a href="#">Activités</a>
+                    <a href="#">S'inscrire</a>
                 </nav>                         
             </header> 
             <!-- <nav> Contains the navigation menu, or other navigation functionality for the page -->
             <nav>
-                <p>NAVIGATION SEARCH</p>
+                <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+                <p>En plein centre ville ou en pleine nature</p>
+                <form method="post" action="rechercher.php">
+                    <input type="text" name="searchBar" id="searchBar" placeholder="Marseille,France" size="15" maxlength="20">
+                    <button type="button" onclick="alert('Rechercher')">Rechercher</button>
+                </form>
+                <form method="post" action="filtrer.php">
+                    <button type="button" class="btn" onclick="alert('Économique')" >
+                        <i class="fas fa-money-bill"></i>Économique
+                    </button>
+                    <button type="button" class="btn" onclick="alert('Familial')" >
+                        <i class="fas fa-child"></i>Familial
+                    </button>
+                    <button type="button" class="btn" onclick="alert('Romantique')" >
+                        <i class="fas fa-heart"></i>Romantique
+                    </button>
+                    <button type="button" class="btn" onclick="alert('Animaux autorisés')" >
+                        <i class="fas fa-dog"></i>Animaux autorisés
+                    </button>
+                </form>
+                <p>Plus de 500 logements sont disponibles dans cette ville</p>
             </nav>             
             
-            <section>
-                <h2>Hébergements à Marseille</h2>    
-                <!-- <article> -->                
+            <section class="section-container">
+                <h2>Hébergements à Marseille</h2>
+                <div class="thumbnail-container">
+                <!-- <article> -->
+                    <div class="img-container">
+                        <img src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                        <p>
+                            <strong>Auberge de la Cannebière<br></strong>
+                            Nuit à partir de <strong>25€</strong>
+                        </p>
+                    </div>
+                    <div class="img-container">
+                        <img src="images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg">
+                        <p>
+                            <strong>Auberge de la Cannebière<br></strong>
+                            Nuit à partir de <strong>52€</strong>
+                        </p>
+                    </div>
+                    <div class="img-container">
+                        <img src="images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg">
+                        <p>
+                            <strong>Auberge de la Cannebière<br></strong>
+                            Nuit à partir de <strong>76€</strong>
+                        </p>
+                    </div>
+                    <div class="img-container">
+                        <img src="images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg">
+                        <p>
+                            <strong>Auberge de la Cannebière<br></strong>
+                            Nuit à partir de <strong>46€</strong>
+                        </p>
+                    </div>
+                    <div class="img-container">
+                        <img src="images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
+                        <p>
+                            <strong>Auberge de la Cannebière<br></strong>
+                            Nuit à partir de <strong>23€</strong>
+                        </p>
+                    </div>
+                    <div class="img-container">
+                        <img src="images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
+                        <p>
+                            <strong>Auberge de la Cannebière<br></strong>
+                            Nuit à partir de <strong>96€</strong>
+                        </p>
+                    </div>
+                </div>
+                <a href="#">Afficher plus</a>
             </section>
 
-            <aside>       
-                <p>ASIDE RIGHT</p>       
+            <aside class="aside-container">       
+                 <p>ASIDE</p>  
             </aside>
 
             <section>
