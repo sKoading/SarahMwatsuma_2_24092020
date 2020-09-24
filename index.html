@@ -12,7 +12,7 @@
         <!-- Awesome font kit's code -->
         <script src="https://kit.fontawesome.com/276c094cee.js" crossorigin="anonymous"></script>
 
-        
+
 
 
         <title>Reservia</title>
@@ -21,7 +21,7 @@
         <div id="wrapper">
             <!-- <header>-->
             <header>           
-                <nav class="menu-container">
+                <nav class="menuContainer">
                     <img src="images/logo/Reservia.svg" alt="Reservia log">
                     <a href="index.html">Hébergements</a>
                     <a href="#">Activités</a>
@@ -29,83 +29,107 @@
                 </nav>                         
             </header> 
             <!-- <nav> Contains the navigation menu, or other navigation functionality for the page -->
-            <nav>
+            <section>
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
                 <p>En plein centre ville ou en pleine nature</p>
-                <form method="post" action="rechercher.php">
+                <form>
                     <input type="text" name="searchBar" id="searchBar" placeholder="Marseille,France" size="15" maxlength="20">
                     <button type="button" onclick="alert('Rechercher')">Rechercher</button>
                 </form>
-                <form method="post" action="filtrer.php">
-                    <button type="button" class="btn" onclick="alert('Économique')" >
+                <form>
+                    <!-- faire une liste de boutton ul pour structurer-->
+                    <button type="button" class="btnFilter">
                         <i class="fas fa-money-bill"></i>Économique
                     </button>
-                    <button type="button" class="btn" onclick="alert('Familial')" >
+                    <button type="button" class="btnFilter">
                         <i class="fas fa-child"></i>Familial
                     </button>
-                    <button type="button" class="btn" onclick="alert('Romantique')" >
+                    <button type="button" class="btnFilter">
                         <i class="fas fa-heart"></i>Romantique
                     </button>
-                    <button type="button" class="btn" onclick="alert('Animaux autorisés')" >
+                    <button type="button" class="btnFilter">
                         <i class="fas fa-dog"></i>Animaux autorisés
                     </button>
                 </form>
-                <p>Plus de 500 logements sont disponibles dans cette ville</p>
-            </nav>             
-            
-            <section class="section-container">
-                <h2>Hébergements à Marseille</h2>
-                <div class="thumbnail-container">
-                <!-- <article> -->
-                    <div class="img-container">
-                        <img src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
-                        <p>
-                            <strong>Auberge de la Cannebière<br></strong>
-                            Nuit à partir de <strong>25€</strong>
-                        </p>
+                <p><i class="fa fa-info" aria-hidden="true"></i>Plus de 500 logements sont disponibles dans cette ville</p>
+            </section>             
+            <div class="divMainContainer">
+                <section class="sectionContainer"> 
+                    <h2>Hébergements à Marseille</h2>
+                    <div class="thumbnailContainer">
+                        <div class="imgContainer">
+                            <img class="imgHebergements" src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                            <p class="pHebergements">
+                                <strong>Auberge de la Cannebière<br></strong>
+                                Nuit à partir de <strong>25€</strong>
+                            </p>
+                        </div>
+                        <div class="imgContainer">
+                            <img class="imgHebergements" src="images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg">
+                            <p class="pHebergements">
+                                <strong>Hôtel du port<br></strong>
+                                Nuit à partir de <strong>52€</strong>
+                            </p>
+                        </div>
+                        <div class="imgContainer">
+                            <img class="imgHebergements" src="images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg">
+                            <p class="pHebergements">
+                                <strong>Hôtel Les mouettes<br></strong>
+                                Nuit à partir de <strong>76€</strong>
+                            </p>
+                        </div>
+                        <div class="imgContainer">
+                            <img class="imgHebergements" src="images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg">
+                            <p class="pHebergements">
+                                <strong>Hôtel de la mer<br></strong>
+                                Nuit à partir de <strong>46€</strong>
+                            </p>
+                        </div>
+                        <div class="imgContainer">
+                            <img class="imgHebergements" src="images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
+                            <p class="pHebergements">
+                                <strong>Auberge Le Panier<br></strong>
+                                Nuit à partir de <strong>23€</strong>
+                            </p>
+                        </div>
+                        <div class="imgContainer">
+                            <img class="imgHebergements" src="images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
+                            <p class="pHebergements">
+                                <strong>Hôtel chez Amina<br></strong>
+                                Nuit à partir de <strong>96€</strong>
+                            </p>
+                        </div>
                     </div>
-                    <div class="img-container">
-                        <img src="images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg">
-                        <p>
-                            <strong>Auberge de la Cannebière<br></strong>
-                            Nuit à partir de <strong>52€</strong>
-                        </p>
-                    </div>
-                    <div class="img-container">
-                        <img src="images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg">
-                        <p>
-                            <strong>Auberge de la Cannebière<br></strong>
-                            Nuit à partir de <strong>76€</strong>
-                        </p>
-                    </div>
-                    <div class="img-container">
-                        <img src="images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg">
-                        <p>
-                            <strong>Auberge de la Cannebière<br></strong>
-                            Nuit à partir de <strong>46€</strong>
-                        </p>
-                    </div>
-                    <div class="img-container">
-                        <img src="images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
-                        <p>
-                            <strong>Auberge de la Cannebière<br></strong>
-                            Nuit à partir de <strong>23€</strong>
-                        </p>
-                    </div>
-                    <div class="img-container">
-                        <img src="images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
-                        <p>
-                            <strong>Auberge de la Cannebière<br></strong>
-                            Nuit à partir de <strong>96€</strong>
-                        </p>
-                    </div>
-                </div>
-                <a href="#">Afficher plus</a>
-            </section>
+                    <a href="#">Afficher plus</a>
+                </section>
 
-            <aside class="aside-container">       
-                 <p>ASIDE</p>  
-            </aside>
+                <aside class="asideContainer">
+                    <div class="popularThumbnailContainer">
+                        <h2>Les plus populaires<i class="fas fa-chart-line"></i></h2>    
+                        <div class="popularImgContainer">
+                            <img class="imgPopular" src="images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
+                            <p class="pPopular">
+                                <strong>Hôtel Le soleil du matin<br></strong>
+                                Nuit à partir de <strong>128€</strong>
+                            </p>
+                        </div>
+                        <div class="popularImgContainer">
+                            <img class="imgPopular" src="images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg">
+                            <p class="pPopular">
+                                <strong>Au coeur de l'eau Chambres d'hôtes<br></strong>
+                                Nuit à partir de <strong>71€</strong>
+                            </p>
+                        </div>
+                        <div class="popularImgContainer">
+                            <img class="imgPopular" src="images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                            <p class="pPopular">
+                                <strong>Hôtel Tout bleu et Blanc<br></strong>
+                                Nuit à partir de <strong>68€</strong>
+                            </p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
 
             <section>
                 <h2>Activités à Marseille</h2>
