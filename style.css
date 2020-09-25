@@ -22,11 +22,6 @@ a
 
 /*Apply flexbox layout to menu container*/
 
-.menuContainer
-{
-    
-   
-}
 
 /*ul menu behavior*/
 
@@ -37,6 +32,7 @@ a
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
+    margin-top: -30px;
 }
 
 .menuContainer a
@@ -50,7 +46,7 @@ a
     color: gray;
 }
 
-/*Creates a margin between the element of the menu*/
+/*Creates a margin between the element of the menu with the multiple selector*/
 
 nav ul li a
 {
@@ -58,7 +54,39 @@ nav ul li a
     padding-top: 70px;
 }
 
+
+
 /******************************************NAVIGATION SEARCH & FILTERS***************************************/
+
+
+
+#btnSearchBar
+{
+    border-radius: 0px 15px 15px 0px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    background-color: #0065FC;
+    color: white;
+    margin: none;
+}
+
+.formA input
+{
+    color: black;
+    font-weight: bold;
+    height: 30px;
+    border: gray;
+    margin: none;
+}
+
+.formA i
+{
+    background-color: grey;
+    border-radius: 15px 0px 0px 15px;
+    height: 30px;
+    width: 30px;
+}
 
 .btnFilter
 {
@@ -93,6 +121,11 @@ form li
 form ul li i
 {
     padding:15px;
+}
+
+.filtres h1
+{
+    margin-top: 50px;
 }
 
 

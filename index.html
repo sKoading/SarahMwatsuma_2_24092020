@@ -21,29 +21,28 @@
         <div id="wrapper">
             <!-- <header>-->
             <header>           
-                <nav class="menuContainer">
-                    <img src="images/logo/Reservia.svg" alt="Reservia log">
-                    <ul>
-                        <li>
-                            <a href="#hebergement">Hébergements</a>
-                        </li>
-                        <li>
-                            <a href="#activites">Activités</a>
-                        </li>
-                        <li>
-                            <a href="#"><strong>S'inscrire</strong></a>
-                        </li>
-                    </ul>
+                <nav class="menuContainer">            
+                        <img src="images/logo/Reservia.svg" alt="Reservia log">           
+                        <ul>
+                            <li>
+                                <a href="#hebergement">Hébergements</a>
+                            </li>
+                            <li>
+                                <a href="#activites">Activités</a>
+                            </li>
+                            <li>
+                                <a href="#"><strong>S'inscrire</strong></a>
+                            </li>
+                        </ul>     
                 </nav>                         
             </header> 
-            <!-- <nav> Contains the navigation menu, or other navigation functionality for the page -->
-            <section>
+            <section class="filtres">
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
                 <p>En plein centre ville ou en pleine nature</p>
-                <form>
+                <form class="formA">
                     <i class="fas fa-map-marker-alt"></i>
                     <input type="text" name="searchBar" id="searchBar" placeholder="Marseille,France" size="15" maxlength="20">
-                    <button type="button" onclick="alert('Rechercher')">Rechercher</button>
+                    <button type="button" id="btnSearchBar">Rechercher</button>
                 </form>
                 <form>
                     <ul>
