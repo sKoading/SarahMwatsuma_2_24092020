@@ -21,27 +21,78 @@ a
 /******************************************MENU***************************************/
 
 /*Apply flexbox layout to menu container*/
+
 .menuContainer
 {
-    display: inline-flex;
+    
+   
 }
 
-/******************************************NAVIGATION SEARCH***************************************/
+/*ul menu behavior*/
+
+.menuContainer ul
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.menuContainer a
+{
+    color:#0065FC;
+}
+
+.menuContainer a:hover
+{
+    border-top: 1px solid #0065FC;
+    color: gray;
+}
+
+/*Creates a margin between the element of the menu*/
+
+nav ul li a
+{
+    margin-right: 50px;
+    padding-top: 70px;
+}
+
+/******************************************NAVIGATION SEARCH & FILTERS***************************************/
 
 .btnFilter
 {
     background-color:white;
-    padding: 10px;
+    padding: 0px;
     border-radius: 40px;
     border: 1px solid #F2F2F2;
     font-weight: bold;
 }
 
-form i
+form ul i
 {
     background-color: #DEEBFF;
     border-radius: 50px;
     color: #0065FC;
+}
+
+form ul
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+form li
+{
+    margin-right: 20px;
+}
+
+form ul li i
+{
+    padding:15px;
 }
 
 
@@ -55,6 +106,11 @@ form i
 
 
 /******************************************HERO***************************************/
+
+ul
+{
+    text-decoration: none;
+}
 
 /*Section container size and background*/
 .sectionContainer

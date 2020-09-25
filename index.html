@@ -23,9 +23,17 @@
             <header>           
                 <nav class="menuContainer">
                     <img src="images/logo/Reservia.svg" alt="Reservia log">
-                    <a href="index.html">Hébergements</a>
-                    <a href="#">Activités</a>
-                    <a href="#">S'inscrire</a>
+                    <ul>
+                        <li>
+                            <a href="#hebergement">Hébergements</a>
+                        </li>
+                        <li>
+                            <a href="#activites">Activités</a>
+                        </li>
+                        <li>
+                            <a href="#"><strong>S'inscrire</strong></a>
+                        </li>
+                    </ul>
                 </nav>                         
             </header> 
             <!-- <nav> Contains the navigation menu, or other navigation functionality for the page -->
@@ -33,29 +41,40 @@
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
                 <p>En plein centre ville ou en pleine nature</p>
                 <form>
+                    <i class="fas fa-map-marker-alt"></i>
                     <input type="text" name="searchBar" id="searchBar" placeholder="Marseille,France" size="15" maxlength="20">
                     <button type="button" onclick="alert('Rechercher')">Rechercher</button>
                 </form>
                 <form>
-                    <!-- faire une liste de boutton ul pour structurer-->
-                    <button type="button" class="btnFilter">
-                        <i class="fas fa-money-bill"></i>Économique
-                    </button>
-                    <button type="button" class="btnFilter">
-                        <i class="fas fa-child"></i>Familial
-                    </button>
-                    <button type="button" class="btnFilter">
-                        <i class="fas fa-heart"></i>Romantique
-                    </button>
-                    <button type="button" class="btnFilter">
-                        <i class="fas fa-dog"></i>Animaux autorisés
-                    </button>
+                    <ul>
+                        <caption><strong>Filtres</strong></caption>
+                        <li>
+                            <button type="button" class="btnFilter">
+                                <i class="fas fa-money-bill"></i>Économique
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btnFilter">
+                                <i class="fas fa-child"></i>Familial
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btnFilter">
+                                <i class="fas fa-heart"></i>Romantique
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btnFilter">
+                                <i class="fas fa-dog"></i>Animaux autorisés
+                            </button>
+                        </li>
+                    </ul>
                 </form>
                 <p><i class="fa fa-info" aria-hidden="true"></i>Plus de 500 logements sont disponibles dans cette ville</p>
             </section>
-                         
+
             <div class="divMainContainer">
-                <section class="sectionContainer"> 
+                <section class="sectionContainer" id="hebergement"> 
                     <h2>Hébergements à Marseille</h2>
                     <div class="thumbnailContainer">
                         <div class="imgContainer">
@@ -132,7 +151,7 @@
                 </aside>
             </div>
 
-            <section>
+            <section id="activites">
                 <h2>Activités à Marseille</h2>
             </section>
             
