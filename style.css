@@ -1,6 +1,6 @@
 /*Tout mettre en camel case, alléger css avec nom de la classe suivi de paragraphe -> utiliser les selecteurs multiples*/
 
-/******************************************COMMON***************************************/
+/************************************************************************************COMMON***************************************/
 
 /*Import Raleway font*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -18,7 +18,7 @@ a
     text-decoration: none;
 }
 
-/******************************************MENU***************************************/
+/************************************************************************************MENU***************************************/
 
 /*Apply flexbox layout to menu container*/
 
@@ -51,76 +51,79 @@ a
 nav ul li a
 {
     margin-right: 50px;
-    padding-top: 70px;
+    padding-top: 26px;
 }
 
 
 
-/******************************************NAVIGATION SEARCH & FILTERS***************************************/
+/***************************************************************NAVIGATION SEARCH & FILTERS***************************************/
 
 
 
 #btnSearchBar
 {
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 0px 10px 10px 0px;
     border: none;
     width: 100px;
-    height: 30px;
+    height: 35px;
     background-color: #0065FC;
     color: white;
     margin: none;
 }
 
+.formA
+{
+    display: flex;
+}
+
 .formA input
 {
-    color: black;
     font-weight: bold;
-    height: 30px;
-    border: gray;
+    height: 35px;
+    border: #eaeaec;
     margin: none;
+    padding-left: 10px;
 }
 
 .formA i
 {
-    background-color: grey;
-    border-radius: 15px 0px 0px 15px;
-    height: 30px;
-    width: 30px;
+    background-color: #eaeaec;
+    border-radius: 10px 0px 0px 10px;
+    padding:7px;
+    width: 20px;
+    padding-left: 15px;
+    padding-top: 10px;
 }
+
+
+/*Change the placeholder color for all browser*/
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+  }
+
+
+
+/***************************************************************FILTERS***************************************/
 
 .btnFilter
 {
     background-color:white;
-    padding: 0px;
+    padding-right: 10px;
+    padding-left: 0px;
     border-radius: 40px;
     border: 1px solid #F2F2F2;
     font-weight: bold;
-}
-
-form ul i
-{
-    background-color: #DEEBFF;
-    border-radius: 50px;
-    color: #0065FC;
-}
-
-form ul
-{
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
-}
-
-form li
-{
-    margin-right: 20px;
-}
-
-form ul li i
-{
-    padding:15px;
+    height: 40px;
 }
 
 .filtres h1
@@ -128,8 +131,57 @@ form ul li i
     margin-top: 50px;
 }
 
+/*Style for the title Filtres*/
+.caption
+{
+    padding-top: 12px;
+    font-weight: bold;
+}
 
-/**************Main container***********/
+form ul
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+/*Style for the icons*/
+form ul i
+{
+    background-color: #DEEBFF;
+    border-radius: 50px;
+    color: #0065FC;
+}
+form ul li i
+{
+    padding:12px;
+}
+
+
+form li
+{
+    margin-right: 20px;
+}
+
+
+/************************************************************************************INFOS***************************************/
+
+.filtres p i
+{
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px 10px 5px 10px;
+    color: #0065FC;
+    border: 1px #eaeaec solid;
+}
+
+
+
+/************************************************************************************HERO***************************************/
+
+
+/*Main container*/
 
 .divMainContainer
 {
@@ -137,8 +189,18 @@ form ul li i
     justify-content: space-between;
 }
 
+/*Styles the full stars*/
+.fas
+{
+    color:#0065FC;
+}
 
-/******************************************HERO***************************************/
+/*Styles the empty stars*/
+#unactiveStar
+{
+    color:#eaeaec;
+}
+
 
 ul
 {
@@ -193,7 +255,7 @@ h2
 }
 
 
-/****************************************ASIDE***************************************/
+/**********************************************************************************ASIDE***************************************/
 
 .asideContainer
 {
@@ -244,10 +306,10 @@ h2 i
     left: 50px;
 }
 
-/****************************************WRAPPER***************************************/
+/**********************************************************************************WRAPPER***************************************/
 
 /*See if usefull*/
 #wrapper
 {
-
+    margin-left: 30px;
 }

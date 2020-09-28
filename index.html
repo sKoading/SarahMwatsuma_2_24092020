@@ -42,34 +42,36 @@
                 <form class="formA">
                     <i class="fas fa-map-marker-alt"></i>
                     <input type="text" name="searchBar" id="searchBar" placeholder="Marseille,France" size="15" maxlength="20">
-                    <button type="button" id="btnSearchBar">Rechercher</button>
+                    <button type="button" id="btnSearchBar" onclick="myFunction(aert)">Rechercher</button>
                 </form>
                 <form>
                     <ul>
-                        <caption><strong>Filtres</strong></caption>
+                        <li class="caption">
+                            Filtres
+                        </li>
                         <li>
                             <button type="button" class="btnFilter">
-                                <i class="fas fa-money-bill"></i>Économique
+                                <i class="fas fa-money-bill"></i> Économique
                             </button>
                         </li>
                         <li>
                             <button type="button" class="btnFilter">
-                                <i class="fas fa-child"></i>Familial
+                                <i class="fas fa-child"></i> Familial
                             </button>
                         </li>
                         <li>
                             <button type="button" class="btnFilter">
-                                <i class="fas fa-heart"></i>Romantique
+                                <i class="fas fa-heart"></i> Romantique
                             </button>
                         </li>
                         <li>
                             <button type="button" class="btnFilter">
-                                <i class="fas fa-dog"></i>Animaux autorisés
+                                <i class="fas fa-dog"></i> Animaux autorisés
                             </button>
                         </li>
                     </ul>
                 </form>
-                <p><i class="fa fa-info" aria-hidden="true"></i>Plus de 500 logements sont disponibles dans cette ville</p>
+                <p><i class="fa fa-info" aria-hidden="true"></i> Plus de 500 logements sont disponibles dans cette ville</p>
             </section>
 
             <div class="divMainContainer">
@@ -80,42 +82,48 @@
                             <img class="imgHebergements" src="images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
                             <p class="pHebergements">
                                 <strong>Auberge de la Cannebière<br></strong>
-                                Nuit à partir de <strong>25€</strong>
+                                Nuit à partir de <strong>25€</strong><br>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star" id="unactiveStar"></i>
                             </p>
                         </div>
                         <div class="imgContainer">
                             <img class="imgHebergements" src="images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg">
                             <p class="pHebergements">
                                 <strong>Hôtel du port<br></strong>
-                                Nuit à partir de <strong>52€</strong>
+                                Nuit à partir de <strong>52€</strong><br>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </p>
                         </div>
                         <div class="imgContainer">
                             <img class="imgHebergements" src="images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg">
                             <p class="pHebergements">
                                 <strong>Hôtel Les mouettes<br></strong>
-                                Nuit à partir de <strong>76€</strong>
+                                Nuit à partir de <strong>76€</strong><br>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star" id="unactiveStar"></i>
                             </p>
                         </div>
                         <div class="imgContainer">
                             <img class="imgHebergements" src="images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg">
                             <p class="pHebergements">
                                 <strong>Hôtel de la mer<br></strong>
-                                Nuit à partir de <strong>46€</strong>
+                                Nuit à partir de <strong>46€</strong><br>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star" id="unactiveStar"></i><i class="fas fa-star" id="unactiveStar"></i>
                             </p>
                         </div>
                         <div class="imgContainer">
                             <img class="imgHebergements" src="images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
                             <p class="pHebergements">
                                 <strong>Auberge Le Panier<br></strong>
-                                Nuit à partir de <strong>23€</strong>
+                                Nuit à partir de <strong>23€</strong><br>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star" id="unactiveStar"></i>
                             </p>
                         </div>
                         <div class="imgContainer">
                             <img class="imgHebergements" src="images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
                             <p class="pHebergements">
                                 <strong>Hôtel chez Amina<br></strong>
-                                Nuit à partir de <strong>96€</strong>
+                                Nuit à partir de <strong>96€</strong><br>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </p>
                         </div>
                     </div>
@@ -129,21 +137,24 @@
                             <img class="imgPopular" src="images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
                             <p class="pPopular">
                                 <strong>Hôtel Le soleil du matin<br></strong>
-                                Nuit à partir de <strong>128€</strong>
+                                Nuit à partir de <strong>128€</strong><br>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                             </p>
                         </div>
                         <div class="popularImgContainer">
                             <img class="imgPopular" src="images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg">
                             <p class="pPopular">
                                 <strong>Au coeur de l'eau Chambres d'hôtes<br></strong>
-                                Nuit à partir de <strong>71€</strong>
+                                Nuit à partir de <strong>71€</strong><br>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star" id="unactiveStar"></i>
                             </p>
                         </div>
                         <div class="popularImgContainer">
                             <img class="imgPopular" src="images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
                             <p class="pPopular">
                                 <strong>Hôtel Tout bleu et Blanc<br></strong>
-                                Nuit à partir de <strong>68€</strong>
+                                Nuit à partir de <strong>68€</strong><br>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star" id="unactiveStar"></i>
                             </p>
                         </div>
                     </div>
