@@ -254,6 +254,11 @@ h2
     text-align: center;
 }
 
+.divMainContainer section a
+{
+    font-weight: bold;
+    color: black;
+}
 
 /**********************************************************************************ASIDE***************************************/
 
@@ -304,6 +309,94 @@ h2 i
     /* Adjust these values accordingly */
     top: 5px;
     left: 50px;
+}
+
+/**********************************************************************************ACTIVITES***************************************/
+
+/*This styles the div that contains all the thumnails*/
+.thumbnailActivitiesContainer
+{
+    display: flex;
+    flex-flow: row wrap;  
+    justify-content: space-evenly;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/*Creating a column flexbox for the image container 2*/
+.flexActivitiesImgContainer2
+{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+
+/*Styling the big containers*/
+.activitesImgContainer
+{
+    border-radius: 30px;
+    width: 300px;
+    height: 400px;
+}
+
+.activitesImgContainer img
+{
+    border-radius: 30px 30px 0px 0px;
+    width: 300px;
+    height: 350px;
+}
+
+/*Styling the big containers in the column*/
+.activitesImgContainer2
+{
+    /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+    
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    
+    border-radius: 30px;
+    width: 300px;
+    height: 200px;
+    border: 2px pink solid;
+}
+
+/*Styling the image for the big containers in the column*/
+.activitesImgContainer2 img
+{
+    border-radius: 30px 30px 0px 0px;
+    width: 300px;
+    height: 150px;
+}
+
+/*Styling the Small containers in the column*/
+.activitesImgContainer3
+{
+    border-radius: 30px;
+    width: 300px;
+    height: 150px;
+    border: 2px pink solid;
+}
+
+/*Styling the image for the small big containers in the column*/
+.activitesImgContainer3 img
+{
+    border-radius: 30px 30px 0px 0px;
+    width: 300px;
+    height: 120px;
+}
+
+
+.imgActivites
+{
+    width: 150px;
+    height: 130px;
+}
+
+.imgActivites2
+{
+    width: 150px;
+    height: 130px;
 }
 
 /**********************************************************************************WRAPPER***************************************/
