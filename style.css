@@ -56,7 +56,7 @@ nav ul li a
 
 
 
-/***************************************************************NAVIGATION SEARCH & FILTERS***************************************/
+/***************************************************************NAVIGATION SEARCH***************************************/
 
 
 
@@ -126,6 +126,18 @@ nav ul li a
     height: 40px;
 }
 
+/*Button when hovered*/
+.btnFilter:hover
+{
+    background-color: #DEEBFF;
+    padding-right: 10px;
+    padding-left: 0px;
+    border-radius: 40px;
+    border: 1px solid #F2F2F2;
+    font-weight: bold;
+    height: 40px;
+}
+
 .filtres h1
 {
     margin-top: 50px;
@@ -137,6 +149,7 @@ nav ul li a
     padding-top: 12px;
     font-weight: bold;
 }
+
 
 form ul
 {
@@ -153,6 +166,7 @@ form ul i
     border-radius: 50px;
     color: #0065FC;
 }
+
 form ul li i
 {
     padding:12px;
@@ -312,6 +326,11 @@ h2 i
 }
 
 /**********************************************************************************ACTIVITES***************************************/
+/*Creates a margin bewteen the activites and the footer*/
+#activites
+{
+    margin-bottom: 50px;
+}
 
 /*This styles the div that contains all the thumnails*/
 .thumbnailActivitiesContainer
@@ -334,6 +353,11 @@ h2 i
 /*Styling the big containers*/
 .activitesImgContainer
 {
+    /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+    -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
     border-radius: 30px;
     width: 300px;
     height: 400px;
@@ -350,15 +374,13 @@ h2 i
 .activitesImgContainer2
 {
     /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
-    
-    -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
-    box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
     
     border-radius: 30px;
     width: 300px;
     height: 200px;
-    border: 2px pink solid;
 }
 
 /*Styling the image for the big containers in the column*/
@@ -372,10 +394,14 @@ h2 i
 /*Styling the Small containers in the column*/
 .activitesImgContainer3
 {
+    /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+    -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
     border-radius: 30px;
     width: 300px;
     height: 150px;
-    border: 2px pink solid;
 }
 
 /*Styling the image for the small big containers in the column*/
@@ -383,7 +409,7 @@ h2 i
 {
     border-radius: 30px 30px 0px 0px;
     width: 300px;
-    height: 120px;
+    height: 100px;
 }
 
 
@@ -398,6 +424,45 @@ h2 i
     width: 150px;
     height: 130px;
 }
+
+section div a div p
+{
+    padding-left: 20px;
+    color: black;
+}
+
+/**********************************************************************************WRAPPER***************************************/
+
+footer
+{
+    background-color: #e8e8e8;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+footer h2
+{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/*Spaces the footer*/
+.footerSpacement
+{
+    padding-left: 200px;
+}
+
+/*Stile the lists*/
+footer section ul li
+{
+    list-style-type: none;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
 
 /**********************************************************************************WRAPPER***************************************/
 
