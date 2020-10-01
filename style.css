@@ -10,6 +10,9 @@
 body
 {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0; /*The body element generally has an 8px margin by default in some browsers so you need to control it in your own stylesheet instead and set it 
+    to what you want. Historically some browsers used padding and some used margin and some applied them to the html element instead of body. */
 }
 
 /*Take off the underlining of the links*/
@@ -25,7 +28,14 @@ a
 
 /*ul menu behavior*/
 
-.menuContainer ul
+.navigationMenu
+{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+nav ul
 {
     list-style-type: none;
     display: flex;
@@ -33,14 +43,53 @@ a
     flex-wrap: wrap;
     justify-content: flex-end;
     margin-top: -30px;
+ 
 }
 
-.menuContainer a
+nav a
 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     color:#0065FC;
+ 
+}
+/*----------------------------------------------------------Nouvelles règles si la fenêtre fait au plus 375px de large -----------------------------------------------*/
+
+@media screen and (max-width: 375px)
+{
+    /*This reverses the order of the flex when the screen is in smartphone mode the nav a gets to be the item order 1 et the nav ul becomes order 2
+    flex-end also becomes a flex start*/
+    nav a
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        order: 1;
+
+        color:#0065FC;
+    }
+
+    nav ul
+    {
+        display: flex;
+        justify-content: flex-start;
+        order: 2;
+
+        margin-top: -30px;
+
+        list-style-type: none;;
+    }
+
+    nav ul li a
+    {
+        margin-right: 0px;
+        padding-top: 0px;
+        border: 4px green solid;
+    }
 }
 
-.menuContainer a:hover
+ul a:hover
 {
     border-top: 1px solid #0065FC;
     color: gray;
@@ -56,7 +105,8 @@ nav ul li a
 
 
 
-/***************************************************************NAVIGATION SEARCH***************************************/
+
+/***************************************************************SEARCH***************************************/
 
 
 
@@ -69,6 +119,22 @@ nav ul li a
     background-color: #0065FC;
     color: white;
     margin: none;
+}
+
+/*----------------------------------------------------------Nouvelles règles si la fenêtre fait au plus 375px de large -----------------------------------------------*/
+
+@media screen and (max-width: 375px)
+{
+    #btnSearchBar
+    {
+        border-radius: 0px 10px 10px 0px;
+        border: none;
+        width: 40px;
+        height: 35px;
+        background-color: pink;
+        color: white;
+        margin: none;
+    }
 }
 
 .formA
@@ -159,6 +225,18 @@ form ul
     list-style-type: none;
 }
 
+/*----------------------------------------------------------Nouvelles règles si la fenêtre fait au plus 375px de large -----------------------------------------------*/
+@media screen and (max-width: 374px)
+{
+    form ul
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        list-style-type: none;
+    }
+}
+
 /*Style for the icons*/
 form ul i
 {
@@ -210,7 +288,7 @@ form li
 }
 
 /*Styles the empty stars*/
-#unactiveStar
+.unactiveStar
 {
     color:#eaeaec;
 }
@@ -227,7 +305,16 @@ ul
     background-color: #F2F2F2;
     max-width: 70%;
     border-radius: 30px;
+    padding-bottom: 20px;
+    margin-left: 30px;
 }
+
+/*Defines the margin of the Afficher plus link*/
+.sectionContainer a
+{
+    margin-left: 50px;
+}
+
 
 /*Apply flexbox layout to thunmbnail container*/
 .thumbnailContainer
@@ -252,6 +339,7 @@ h2
     width: 300px;
     background-color: white;
     padding: 5px;
+    margin-bottom: 50px;
 }
 
 /*Modify the image inside of the thunmbnail*/
@@ -260,6 +348,8 @@ h2
     width: 300px;
     height: 200px;
     border-radius: 30px 30px 0px 0px;
+
+    object-fit: cover;
 }
 
 /*Hébérgement paragraphe align to the center*/
@@ -274,12 +364,13 @@ h2
     color: black;
 }
 
+
 /**********************************************************************************ASIDE***************************************/
 
 .asideContainer
 {
     background-color: #F2F2F2;
-    max-width: 30%;
+    max-width: 40%;
     border-radius: 30px;
 }
 
@@ -287,6 +378,10 @@ h2
 {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+
     padding: 5px 20px 20px 20px;
 }
 
@@ -307,6 +402,7 @@ h2
     width: 170px;
     height: 150px;
     border-radius: 30px 0px 0px 30px;
+    object-fit: cover;
 }
 
 /*Hébérgement paragraphe align to the left*/
@@ -325,7 +421,13 @@ h2 i
     left: 50px;
 }
 
+#graphIcon
+{
+    color: black;
+}
+
 /**********************************************************************************ACTIVITES***************************************/
+
 /*Creates a margin bewteen the activites and the footer*/
 #activites
 {
@@ -336,8 +438,9 @@ h2 i
 .thumbnailActivitiesContainer
 {
     display: flex;
-    flex-flow: row wrap;  
-    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-between;
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -347,7 +450,7 @@ h2 i
 {
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 /*Styling the big containers*/
@@ -359,8 +462,10 @@ h2 i
     box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 
     border-radius: 30px;
-    width: 300px;
-    height: 400px;
+    width: 300px; /* width of container */
+    height: 400px; /* height of container */
+    /*overflow: hidden; Everything that goes out of the container will be hidden*/
+
 }
 
 .activitesImgContainer img
@@ -368,6 +473,9 @@ h2 i
     border-radius: 30px 30px 0px 0px;
     width: 300px;
     height: 350px;
+
+    object-fit: cover;
+    /*object-position: 20% 10px;*/
 }
 
 /*Styling the big containers in the column*/
@@ -378,9 +486,11 @@ h2 i
     -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
     box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
     
-    border-radius: 30px;
     width: 300px;
     height: 200px;
+    /*overflow: hidden; Everything that goes out of the container will be hidden*/    
+
+    border-radius: 30px;
 }
 
 /*Styling the image for the big containers in the column*/
@@ -389,6 +499,8 @@ h2 i
     border-radius: 30px 30px 0px 0px;
     width: 300px;
     height: 150px;
+
+    object-fit: cover;
 }
 
 /*Styling the Small containers in the column*/
@@ -402,6 +514,7 @@ h2 i
     border-radius: 30px;
     width: 300px;
     height: 150px;
+    overflow: hidden; /*Everything that goes out of the container will be hidden*/
 }
 
 /*Styling the image for the small big containers in the column*/
@@ -410,6 +523,8 @@ h2 i
     border-radius: 30px 30px 0px 0px;
     width: 300px;
     height: 100px;
+
+    object-fit: cover;
 }
 
 
@@ -431,7 +546,7 @@ section div a div p
     color: black;
 }
 
-/**********************************************************************************WRAPPER***************************************/
+/**********************************************************************************FOOTER***************************************/
 
 footer
 {
@@ -440,8 +555,8 @@ footer
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
-    height: 100%;
 }
+
 
 footer h2
 {
@@ -456,11 +571,16 @@ footer h2
 }
 
 /*Stile the lists*/
-footer section ul li
+footer ul li
 {
     list-style-type: none;
     font-size: 15px;
     padding-top: 10px;
+}
+/*Colors the link of the footer*/
+footer ul li a
+{
+    color: black;
 }
 
 
@@ -470,4 +590,10 @@ footer section ul li
 #wrapper
 {
     margin-left: 30px;
+}
+
+/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
+@media screen and (max-width: 375px)
+{
+    margin-left: 10px;
 }
