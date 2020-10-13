@@ -26,10 +26,10 @@
                     <div class="navigationMenu">          
                         <ul>
                             <li>
-                                <a href="#hebergement">Hébergements</a>
+                                <a class="hebergement" href="#hebergement">Hébergements</a>
                             </li>
                             <li>
-                                <a href="#activites">Activités</a>
+                                <a class="activites" href="#activites">Activités</a>
                             </li>
                         </ul>
                         <a href="#"><strong>S'inscrire</strong></a>    
@@ -42,7 +42,8 @@
                 <form class="formA">
                     <i class="fas fa-map-marker-alt"></i>
                     <input type="text" name="searchBar" id="searchBar" placeholder="Marseille,France" size="15" maxlength="20">
-                    <button type="button" id="btnSearchBar" onclick="myFunction(aert)">Rechercher</button>
+                    <button type="button" id="btnSearchBar">Rechercher</button>
+                    <button type="button" id="btnSearchBarSmall"><i class="fas fa-search"></i></button>
                 </form>
                 <form>
                     <ul>
@@ -71,10 +72,10 @@
                         </li>
                     </ul>
                 </form>
-                <p><i class="fa fa-info" aria-hidden="true"></i> Plus de 500 logements sont disponibles dans cette ville</p>
+                <p class="textInfo"><i class="fa fa-info" aria-hidden="true"></i> Plus de 500 logements sont disponibles dans cette ville</p>
             </section>
 
-            <div class="divMainContainer">
+            <div class="divMainContainer" id="hebergement">
                 <section class="sectionContainer"> 
                     <h2>Hébergements à Marseille</h2>          
                     <div class="thumbnailContainer">

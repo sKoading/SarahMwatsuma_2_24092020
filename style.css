@@ -1,6 +1,6 @@
 /*Tout mettre en camel case, alléger css avec nom de la classe suivi de paragraphe -> utiliser les selecteurs multiples*/
 
-/************************************************************************************COMMON***************************************/
+/************************************************************************************COMMON*************************************************************/
 
 /*Import Raleway font*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -21,7 +21,7 @@ a
     text-decoration: none;
 }
 
-/************************************************************************************MENU***************************************/
+/************************************************************************************MENU**************************************************************/
 
 /*Apply flexbox layout to menu container*/
 
@@ -43,7 +43,6 @@ nav ul
     flex-wrap: wrap;
     justify-content: flex-end;
     margin-top: -30px;
- 
 }
 
 nav a
@@ -52,40 +51,6 @@ nav a
     flex-direction: row;
     justify-content: flex-end;
     color:#0065FC;
- 
-}
-/*----------------------------------------------------------Nouvelles règles si la fenêtre fait au plus 375px de large -----------------------------------------------*/
-@media screen and (max-width: 375px)
-{
-    /*This reverses the order of the flex when the screen is in smartphone mode the nav a gets to be the item order 1 et the nav ul becomes order 2
-    flex-end also becomes a flex start*/
-    nav a
-    {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        order: 1;
-
-        color:#0065FC;
-    }
-
-    nav ul
-    {
-        display: flex;
-        justify-content: flex-start;
-        order: 2;
-
-        margin-top: -30px;
-
-        list-style-type: none;;
-    }
-
-    nav ul li a
-    {
-        margin-right: 0px;
-        padding-top: 0px;
-        border: 4px green solid;
-    }
 }
 
 ul a:hover
@@ -102,12 +67,69 @@ nav ul li a
     padding-top: 26px;
 }
 
+/*-----Nouvelles règles si la fenêtre fait au plus 375px de large---------*/
+@media screen and (max-width: 375px)
+{
+    .navigationMenu
+    {
+        display: flex;
+        border: green 2px solid;
+    }
+    /*This reverses the order of the flex when the screen is in smartphone mode the nav a gets to be the item order 1 et the nav ul becomes order 2
+    flex-end also becomes a flex start*/
+    nav a
+    {
+        display: block;    
+        
+        color:#0065FC;
+        padding-bottom: 50px;   
+        color: 2px black solid;
+        margin: 0px;
+        border: 2px blue solid;
+    }
 
+    nav ul
+    {
+        display: flex;
+        justify-content: space-between;
+        order: 2;
+        list-style-type: none;      
+        border: 2px black solid;
+    }
 
+    .activites
+    {
+        display:block;
+        width:100px;
+        height:5px;
 
-/***************************************************************SEARCH***************************************/
+        border: 2px brown solid;
+    }
 
+    .hebergement
+    {
+        display:block;
+        width:100px;
+        height:5px;
+        border: 2px brown solid;
+    }
 
+    nav ul li a
+    {
+        margin-right: 0px;
+        padding-top: 0px;
+        border: 2px pink solid;
+    }
+    ul a:hover
+    {
+        border-top: none;
+        border-bottom: 2px solid #0065FC;
+        color: gray;
+        size: 100px;
+    }
+}
+
+/***********************************************************************************SEARCH**************************************************************/
 
 #btnSearchBar
 {
@@ -120,20 +142,10 @@ nav ul li a
     margin: none;
 }
 
-/*----------------------------------------------------------Nouvelles règles si la fenêtre fait au plus 375px de large -----------------------------------------------*/
-
-@media screen and (max-width: 375px)
+/*Second mouse button for the smartphone screen is hidden when not iphone size*/
+#btnSearchBarSmall
 {
-    #btnSearchBar
-    {
-        border-radius: 0px 10px 10px 0px;
-        border: none;
-        width: 40px;
-        height: 35px;
-        background-color: pink;
-        color: white;
-        margin: none;
-    }
+    visibility: hidden;
 }
 
 .formA
@@ -150,7 +162,7 @@ nav ul li a
     padding-left: 10px;
 }
 
-.formA i
+.fa-map-marker-alt
 {
     background-color: #eaeaec;
     border-radius: 10px 0px 0px 10px;
@@ -163,22 +175,48 @@ nav ul li a
 
 /*Change the placeholder color for all browser*/
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder 
+{ /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
     opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+}
+
+:-ms-input-placeholder 
+{ /* Internet Explorer 10-11 */
     color: black;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
+}
+
+::-ms-input-placeholder 
+{ /* Microsoft Edge */
     color: black;
-  }
+}
+  
+.fa-search
+{
+    visibility: hidden;
+}
 
+/*-----Nouvelles règles si la fenêtre fait au plus 375px de large ---------*/
+@media screen and (max-width: 375px)
+{
+    /*First mouse button for the big screen hidden*/
+    #btnSearchBar
+    {     
+        visibility: hidden; /*Hides the reserach button we could also use (transform: scale(0);)*/
+    }
+     
+    .fa-search
+    {   
+        visibility: visible;
+        background-color:#0065FC;
+        color: white;
+        border-radius: 10px 10px 10px 10px;
+        padding:9px;
+        width: 20px;
+    }
 
-
-/***************************************************************FILTERS***************************************/
+}
+/**********************************************************************************FILTERS**************************************************************/
 
 .btnFilter
 {
@@ -215,7 +253,6 @@ nav ul li a
     font-weight: bold;
 }
 
-
 form ul
 {
     display: flex;
@@ -243,18 +280,35 @@ form li
     margin-right: 20px;
 }
 
-/*----------------------------------------------------------Nouvelles règles si la fenêtre fait au plus 375px de large -----------------------------------------------*/
+/*---Nouvelles règles si la fenêtre fait au plus 375px de large -----*/
 @media screen and (max-width: 375px)
 {
+    form ul
+    {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+    }
+
     form ul li
     {
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        align-self: flex-start;
+        padding: 5px;
         list-style-type: none;
     }
+    .filtres h1
+    {
+        font-size: 22px;
+    }
+
+    .textInfo
+    {
+        margin-bottom: 80px;
+    }
 }
-/************************************************************************************INFOS***************************************/
+/************************************************************************************INFOS**************************************************************/
 
 .filtres p i
 {
@@ -265,9 +319,18 @@ form li
     border: 1px #eaeaec solid;
 }
 
+/*---Nouvelles règles si la fenêtre fait au plus 375px de large -----*/
+@media screen and (max-width: 375px)
+{
+    .textInfo
+    {
+        font-size: 14px;
+    }
+}
 
 
-/************************************************************************************HERO***************************************/
+
+/************************************************************************************HERO**************************************************************/
 
 /*Main container*/
 .divMainContainer
@@ -277,7 +340,7 @@ form li
 }
 
 /*Styles the full stars*/
-.fas
+.fa-star
 {
     color:#0065FC;
 }
@@ -377,6 +440,7 @@ h2
         border-radius: 0px;
         padding-bottom: 0px;
         margin-left: 0px;
+        order: 2;
     }
     
     /*Apply flexbox layout to thunmbnail container*/
@@ -388,11 +452,10 @@ h2
         padding-left: 5px;
         padding-right: 0px;
     }
-
 }
 
 
-/**********************************************************************************ASIDE***************************************/
+/**********************************************************************************ASIDE**************************************************************/
 
 .asideContainer
 {
@@ -406,9 +469,7 @@ h2
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     height: 100%;
-
     padding: 5px 20px 20px 20px;
 }
 
@@ -456,10 +517,61 @@ h2 i
 
 @media screen and (max-width: 375px)
 {
+    .asideContainer
+    {
+        background-color: #F2F2F2;
+        max-width: 375px;
+        border-radius: 0px;
+        margin: -40px;
+        width: 375px;
+    }
 
+    .popularThumbnailContainer
+    {  
+        height: 0%;
+        padding-left: 7px;
+    }
+
+    .popularImgContainer
+    {
+        border-radius: 30px;
+        width: 350px;
+        height: 150px;
+        background-color: white;
+        padding: 5px;
+        margin-bottom:50px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .imgPopular
+    {
+        width: 170px;
+        height: 150px;
+        border-radius: 30px 0px 0px 30px;
+        object-fit: cover;
+    }
+    /*Hébérgement paragraphe align to the left*/
+    .pPopular
+    {
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    /*Graph icon position on the popular h2 heading*/
+
+    h2 i
+    {
+        position: relative;
+        /* Adjust these values accordingly */
+        top: 5px;
+        left: 50px;
+    }
+
+    /*PROCESSING Put the starts up*/
 }
 
-/**********************************************************************************ACTIVITES***************************************/
+/**********************************************************************************ACTIVITES***********************************************************/
 
 /*Creates a margin bewteen the activites and the footer*/
 #activites
@@ -683,7 +795,7 @@ section div a div p
 
 }
 
-/**********************************************************************************FOOTER***************************************/
+/**********************************************************************************FOOTER**************************************************************/
 
 footer
 {
@@ -736,7 +848,7 @@ footer ul li a
     }
 }
 
-/**********************************************************************************WRAPPER***************************************/
+/**********************************************************************************WRAPPER**************************************************************/
 
 /*See if usefull*/
 #wrapper
@@ -748,6 +860,9 @@ footer ul li a
 /*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
 @media screen and (max-width: 375px)
 {
-    margin-left: 0px;
-    margin-right: 0px;
+    #wrapper
+    {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
 }
