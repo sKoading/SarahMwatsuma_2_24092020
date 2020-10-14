@@ -73,19 +73,19 @@ nav ul li a
     .navigationMenu
     {
         display: flex;
-        border: green 2px solid;
+        flex-direction: column;
+        width: 370px;
+        margin-left: -40px;
     }
     /*This reverses the order of the flex when the screen is in smartphone mode the nav a gets to be the item order 1 et the nav ul becomes order 2
     flex-end also becomes a flex start*/
     nav a
     {
-        display: block;    
-        
+        display: flex;    
+        justify-content: flex-end; 
         color:#0065FC;
-        padding-bottom: 50px;   
-        color: 2px black solid;
+        padding-bottom: 50px;
         margin: 0px;
-        border: 2px blue solid;
     }
 
     nav ul
@@ -94,7 +94,6 @@ nav ul li a
         justify-content: space-between;
         order: 2;
         list-style-type: none;      
-        border: 2px black solid;
     }
 
     .activites
@@ -102,8 +101,6 @@ nav ul li a
         display:block;
         width:100px;
         height:5px;
-
-        border: 2px brown solid;
     }
 
     .hebergement
@@ -111,16 +108,15 @@ nav ul li a
         display:block;
         width:100px;
         height:5px;
-        border: 2px brown solid;
     }
 
     nav ul li a
     {
         margin-right: 0px;
         padding-top: 0px;
-        border: 2px pink solid;
+        border-bottom: 2px solid grey;
     }
-    ul a:hover
+    nav ul li a:hover
     {
         border-top: none;
         border-bottom: 2px solid #0065FC;
