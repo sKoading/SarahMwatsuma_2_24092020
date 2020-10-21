@@ -131,7 +131,12 @@ nav ul li a
     ul a:hover
     {
         border-top: 0px;
-    }
+    } 
+
+    nav a:hover
+    {
+        color: #0065FC;
+    }       
 }
 
 /***********************************************************************************SEARCH**************************************************************/
@@ -510,7 +515,87 @@ h2
     }
 }
 
+@media screen and (max-width: 768px)
+{
+    /*Main container For the Hero and Aside part*/
+    .divMainContainer
+    {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;    
+    }
 
+    /*Section container size and background*/
+    .sectionContainer
+    {
+        background-color: #F2F2F2;
+        max-width: 100%;
+        border-radius: 30px;
+        padding-bottom: 20px;
+        margin-left: 0px;
+    }
+    /*Section container size and background*/
+    .sectionContainer
+    {
+        background-color: none;
+        max-width: 100%;
+        border-radius: 0px;
+        padding-bottom: 0px;
+        margin-left: 0px;
+        order: 2;
+    }
+    
+    /*Apply flexbox layout to thunmbnail container*/
+    .thumbnailContainer
+    {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0px;
+    }
+
+    /*Create vignette*/
+    .imgContainer
+    {
+        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
+        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+        border-radius: 30px;
+        width: 350px;
+        background-color: white;
+        padding: 5px;
+        margin-bottom: 50px;
+        margin-left: -80px;
+    }
+
+    /*Modify the image inside of the thunmbnail*/
+    .imgHebergements
+    {
+        width: 350px;
+        height: 130px;
+        border-radius: 30px 30px 0px 0px;
+        object-fit: cover;
+    }
+
+    /*Defines the margin of the Afficher plus link*/
+    .sectionContainer a
+    {
+        margin-left: 0px;
+    }
+
+    .hebergementsLink
+    {
+        display: inline-flex;
+        width: 100px;
+    }
+
+    h2
+    {
+        padding-top: 20px;
+        padding-left: 0px;
+        width: 330px;
+    }
+}
 /**********************************************************************************ASIDE**************************************************************/
 
 .asideContainer
@@ -627,6 +712,68 @@ h2 i
         left: 50px;
     }
 }
+
+@media screen and (max-width: 768px)
+{
+    .popularThumbnailContainer
+    {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-content: center;
+        height: 100%;
+        padding: 5px 20px 20px 20px;
+    }
+    .asideContainer
+    {
+        background-color: white;
+        max-width: 768px;
+        border-radius: 0px;
+        width: 768px;
+    }
+
+    .popularThumbnailContainer
+    {  
+        height: 0%;
+        padding-left: 7px;
+    }
+
+    .popularImgContainer
+    {
+        border-radius: 30px;
+        width: 350px;
+        height: 190px;
+        background-color: white;
+        padding: 5px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .imgPopular
+    {
+        width: 170px;
+        height: 190px;
+        border-radius: 30px 0px 0px 30px;
+        object-fit: cover;
+    }
+    /*Hébérgement paragraphe align to the left*/
+    .pPopular
+    {
+        text-align: left;
+        margin-left: 20px;
+    }
+    /*Graph icon position on the popular h2 heading*/
+
+    h2 i
+    {
+        position: relative;
+        /* Adjust these values accordingly */
+        top: 5px;
+        left: 50px;
+    }
+}
+
 
 /**********************************************************************************ACTIVITES***********************************************************/
 
@@ -852,6 +999,111 @@ section div a div p
 
 }
 
+/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
+@media screen and (max-width: 768px)
+{
+    /*This styles the div that contains all the thumnails*/
+    .thumbnailActivitiesContainer
+    {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+        padding-left: 5px;
+    }
+    
+    /*Creating a column flexbox for the image container 2*/
+    .flexActivitiesImgContainer2
+    {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+        margin-bottom: 10px;
+    }
+
+
+    /*Styling the big containers*/
+    .activitesImgContainer
+    {
+        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
+        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
+        border-radius: 30px;
+        width: 300px;
+        height: 200px;
+        /*overflow: hidden; Everything that goes out of the container will be hidden*/
+
+        margin-bottom: 30px;
+    }
+
+    .activitesImgContainer img
+    {
+        border-radius: 30px 30px 0px 0px;
+        width: 300px;
+        height: 150px;
+
+        object-fit: cover;
+        /*object-position: 20% 10px;*/
+    }
+
+
+    /*Styling the big containers in the column*/
+    .activitesImgContainer2
+    {
+        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
+        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+        
+        width: 300px;
+        height: 200px;
+        /*overflow: hidden; Everything that goes out of the container will be hidden*/    
+
+        margin-bottom: 30px;
+        border-radius: 30px;
+    }
+
+    /*Styling the image for the big containers in the column*/
+    .activitesImgContainer2 img
+    {
+        border-radius: 30px 30px 0px 0px;
+        width: 300px;
+        height: 150px;
+
+        object-fit: cover;
+    }
+
+
+
+    /*Styling the Small containers in the column*/
+    .activitesImgContainer3
+    {
+        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
+        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+
+        border-radius: 30px;
+        width: 300px;
+        height: 200px;
+        overflow: hidden; /*Everything that goes out of the container will be hidden*/
+
+        margin-bottom: 30px;
+    }
+
+    /*Styling the image for the small big containers in the column*/
+    .activitesImgContainer3 img
+    {
+        border-radius: 30px 30px 0px 0px;
+        width: 300px;
+        height: 150px;
+
+        object-fit: cover;
+    }
+
+}
+
 /**********************************************************************************FOOTER**************************************************************/
 
 footer
@@ -890,6 +1142,28 @@ footer ul li a
 
 /*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
 @media screen and (max-width: 375px)
+{
+    footer
+    {
+        background-color: #e8e8e8;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    /*Spaces the footer*/
+    .footerSpacement
+    {
+        padding-left: 40px;
+    }
+
+    footer h2
+    {
+        padding-left: 40px;
+    }
+}
+
+/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
+@media screen and (max-width: 768px)
 {
     footer
     {
