@@ -25,14 +25,24 @@ a
 
 /*Apply flexbox layout to menu container*/
 
+nav
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
 
 /*ul menu behavior*/
-
 .navigationMenu
 {
     display: flex;
-    justify-content: flex-end;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.navigationMenuSmall
+{
+    visibility: hidden;
 }
 
 nav ul
@@ -41,16 +51,15 @@ nav ul
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    margin-top: -49px;
 }
 
-nav a
+.registration
 {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     color: black;
+    padding-top: 16px;
 }
 
 ul a:hover
@@ -59,84 +68,45 @@ ul a:hover
     color:#0065FC;
 }
 
-/*Creates a margin between the element of the menu with the multiple selector*/
-
-nav ul li a
-{
-    margin-right: 50px;
-    padding-top: 26px;
-}
-
 /*-----Nouvelles règles si la fenêtre fait au plus 375px de large---------*/
 @media screen and (max-width: 375px)
 {
-    .navigationMenu
+    .navigationMenu ul
     {
+        visibility: hidden;
+    }
+
+    .navigationMenuSmall
+    {
+        visibility: visible;     
         display: flex;
-        flex-direction: column;
-        width: 415px;
-        margin-left: -80px;
-    }
-    /*This reverses the order of the flex when the screen is in smartphone mode the nav a gets to be the item order 1 et the nav ul becomes order 2
-    flex-end also becomes a flex start*/
-    nav a
-    {
-        display: flex;    
-        justify-content: flex-end; 
-        color:black;
-        padding-bottom: 50px;
-        margin: 0px;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    nav ul
+    .navigationMenuSmall ul
     {
+        width: 100%;
+        list-style-type: none;
         display: flex;
-        justify-content: flex-start;
-        order: 2;
-        list-style-type: none; 
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
     }
-
-    .activites
+    .registration
     {
-        display:block;
-        width:100px;
-        height:5px;
+        padding-top: 30px;
     }
-
-    .hebergement
+    ul a:hover
     {
-        display:block;
-        width:100px;
-        height:5px;
+        border-top: 0px;
     }
-
-    nav ul li 
-    {
-        margin: 0px;
-        padding: 0px;
-        border-bottom: 2px solid #eaeaec;
-        flex-grow: 4;
-    }
-    nav ul li:hover
+     
+    ul li:hover
     {
         color: #0065FC;
         border-bottom: 2px solid #0065FC;
     }
-
-    ul a
-    {
-        border-top: 0px;
-    }
-
-    ul a:hover
-    {
-        border-top: 0px;
-    } 
-
-    nav a:hover
-    {
-        color: #0065FC;
-    }       
 }
 
 /***********************************************************************************SEARCH**************************************************************/
@@ -149,7 +119,7 @@ nav ul li a
     height: 35px;
     background-color: #0065FC;
     color: white;
-    margin: none;
+    margin: 0px; /*Changed*/
 }
 
 /*Second mouse button for the smartphone screen is hidden when not iphone size*/
@@ -168,7 +138,7 @@ nav ul li a
     font-weight: bold;
     height: 35px;
     border: #eaeaec;
-    margin: none;
+    margin: 0px; /*Changed*/
     padding-left: 10px;
 }
 
@@ -342,14 +312,14 @@ form li
     }
 }
 
-
-
 /************************************************************************************HERO**************************************************************/
 
 /*Main container*/
 .divMainContainer
 {
-    display: inline-flex;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -377,13 +347,6 @@ ul
     max-width: 70%;
     border-radius: 30px;
     padding-bottom: 20px;
-    margin-left: 30px;
-}
-
-/*Defines the margin of the Afficher plus link*/
-.sectionContainer a
-{
-    margin-left: 50px;
 }
 
 
@@ -439,13 +402,15 @@ h2
     color: black;
 }
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 1437px)
 {
     /*Main container For the Hero and Aside part*/
     .divMainContainer
     {
-        display: flex;
+        max-width: 100%;
         flex-flow: column wrap;
+        justify-content: center;
+        border: 2px blue solid;
     }
 
     /*Section container size and background*/
@@ -460,7 +425,7 @@ h2
     /*Section container size and background*/
     .sectionContainer
     {
-        background-color: none;
+        background-color: white; /*Changed*/
         max-width: 100%;
         border-radius: 0px;
         padding-bottom: 0px;
@@ -532,7 +497,7 @@ h2
     /*Section container size and background*/
     .sectionContainer
     {
-        background-color: none;
+        background-color: white; /*Changed*/
         max-width: 0%;
         border-radius: 0px;
         padding-bottom: 0px;
@@ -561,7 +526,6 @@ h2
         background-color: white;
         padding: 5px;
         margin-bottom: 50px;
-        margin-left: -42px;
     }
 
     /*Modify the image inside of the thunmbnail*/
@@ -600,7 +564,6 @@ h2
     background-color: #F2F2F2;
     max-width: 40%;
     border-radius: 30px;
-    margin-left: -40px;
 }
 
 .popularThumbnailContainer
@@ -658,7 +621,7 @@ h2 i
     color: black;
 }
 
-@media screen and (max-width: 768px)
+@media screen and (max-width: 1261px)
 {
     .popularThumbnailContainer
     {
@@ -782,12 +745,11 @@ h2 i
 /*This styles the div that contains all the thumnails*/
 .thumbnailActivitiesContainer
 {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
     justify-content: space-between;
-    padding-left: 40px;
-    padding-right: 40px;
 }
 
 
@@ -898,7 +860,6 @@ section div a div p
     /*This styles the div that contains all the thumnails*/
     .thumbnailActivitiesContainer
     {
-        display: flex;
         flex-flow: column wrap;
         align-content: center;
         padding-left: 5px;
@@ -907,7 +868,6 @@ section div a div p
     /*Creating a column flexbox for the image container 2*/
     .flexActivitiesImgContainer2
     {
-        display: flex;
         flex-flow: column wrap;
         align-content: center;
         margin-bottom: 10px;
@@ -1004,9 +964,9 @@ section div a div p
     /*This styles the div that contains all the thumnails*/
     .thumbnailActivitiesContainer
     {
-        display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        
+        align-content: center;
         padding-left: 5px;
     }
 
@@ -1105,22 +1065,22 @@ section div a div p
 footer
 {
     background-color: #e8e8e8;
-    display: inline-flex;
-    flex-wrap: wrap;
+    display: flex;
+    flex-flow: row wrap;
     justify-content: flex-start;
     width: 100%;
+    border: 2px solid pink;
+}
+
+footer div
+{
+    padding-right: 250px;
 }
 
 footer h2
 {
     font-size: 15px;
     font-weight: bold;
-}
-
-/*Spaces the footer*/
-.footerSpacement
-{
-    padding-left: 400px;
 }
 
 /*Stile the lists*/
@@ -1141,33 +1101,14 @@ footer ul li a
 {
     footer
     {
-        background-color: #e8e8e8;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    /*Spaces the footer*/
-    .footerSpacement
-    {
-        padding-left: 40px;
-    }
-
-    footer h2
-    {
-        padding-left: 40px;
-    }
+        flex-flow: column wrap;
+    }  
 }
 
 /*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
 @media screen and (max-width: 375px)
 {
-    footer
-    {
-        background-color: #e8e8e8;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+
     /*Spaces the footer*/
     .footerSpacement
     {
@@ -1195,15 +1136,5 @@ footer ul li a
     {
         margin-left: 0px;
         margin-right: 0px;
-    }
-}
-
-/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
-@media screen and (max-width: 375px)
-{
-    #wrapper
-    {
-        margin-left: 40px;
-        margin-right: 40px;
     }
 }
