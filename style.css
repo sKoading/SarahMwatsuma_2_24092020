@@ -21,16 +21,43 @@ a
     text-decoration: none;
 }
 
+/**********************************************************************************WRAPPER**************************************************************/
+
+/*See if usefull*/
+#wrapper
+{
+    width: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+    border: 2px solid black;
+}
+
+/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
+@media screen and (max-width: 768px)
+{
+    #wrapper
+    {
+        margin-left: 0px;
+        margin-right: 0px;
+        border: 2px solid pink;
+    }
+}
+
 /************************************************************************************MENU**************************************************************/
 
-/*Apply flexbox layout to menu container*/
+.navigationMenu a
+{
+    padding-right: 50px;
+}
 
+/*Apply flexbox layout to menu container*/
 nav
 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    padding-top: 30px;
 }
 
 /*ul menu behavior*/
@@ -66,6 +93,7 @@ ul a:hover
 {
     border-top: 1px solid #0065FC;
     color:#0065FC;
+    padding-top: 45px;
 }
 
 /*-----Nouvelles règles si la fenêtre fait au plus 375px de large---------*/
@@ -410,7 +438,6 @@ h2
         max-width: 100%;
         flex-flow: column wrap;
         justify-content: center;
-        border: 2px blue solid;
     }
 
     /*Section container size and background*/
@@ -1064,12 +1091,12 @@ section div a div p
 
 footer
 {
+    max-width: 100%;
     background-color: #e8e8e8;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     width: 100%;
-    border: 2px solid pink;
 }
 
 footer div
@@ -1118,23 +1145,5 @@ footer ul li a
     footer h2
     {
         padding-left: 40px;
-    }
-}
-/**********************************************************************************WRAPPER**************************************************************/
-
-/*See if usefull*/
-#wrapper
-{
-    margin-left: 40px;
-    margin-right: 40px;
-}
-
-/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
-@media screen and (max-width: 768px)
-{
-    #wrapper
-    {
-        margin-left: 0px;
-        margin-right: 0px;
     }
 }
