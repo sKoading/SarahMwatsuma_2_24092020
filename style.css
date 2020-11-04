@@ -7,12 +7,19 @@
 
 
 /*Make Raleway the default font*/
+html, body
+{
+    width: 100%;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0; /*The body element generally has an 8px margin by default in some browsers so you need to control it in your own stylesheet instead and set it 
+    to what you want. Historically some browsers used padding and some used margin and some applied them to the html element instead of body. */
+}
+
 body
 {
-    font-family: 'Raleway', Arial, Helvetica, sans-serif;
-    margin:0;
-    padding:0; /*The body element generally has an 8px margin by default in some browsers so you need to control it in your own stylesheet instead and set it 
-    to what you want. Historically some browsers used padding and some used margin and some applied them to the html element instead of body. */
+    width: 100%; 
+    height: 100%; 
 }
 
 /*Take off the underlining of the links*/
@@ -21,25 +28,18 @@ a
     text-decoration: none;
 }
 
-/**********************************************************************************WRAPPER**************************************************************/
+/************************************************************************************WRAPPER**************************************************************/
 
-/*See if usefull*/
 #wrapper
 {
-    width: 100%;
-    margin-left: 40px;
-    margin-right: 40px;
-    border: 2px solid black;
+    padding: 0 40px;
 }
 
-/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
 @media screen and (max-width: 768px)
 {
     #wrapper
     {
-        margin-left: 0px;
-        margin-right: 0px;
-        border: 2px solid pink;
+        padding: 0 0px;
     }
 }
 
@@ -69,7 +69,7 @@ nav
 
 .navigationMenuSmall
 {
-    visibility: hidden;
+    display: none; /*Cacher qqch*/
 }
 
 nav ul
@@ -97,16 +97,15 @@ ul a:hover
 }
 
 /*-----Nouvelles règles si la fenêtre fait au plus 375px de large---------*/
-@media screen and (max-width: 375px)
+@media screen and (max-width: 535px)
 {
     .navigationMenu ul
     {
-        visibility: hidden;
+        display: none; /*Cacher qqch*/
     }
 
     .navigationMenuSmall
-    {
-        visibility: visible;     
+    { 
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -153,7 +152,7 @@ ul a:hover
 /*Second mouse button for the smartphone screen is hidden when not iphone size*/
 #btnSearchBarSmall
 {
-    visibility: hidden;
+    display: none;
 }
 
 .formA
@@ -201,7 +200,7 @@ ul a:hover
   
 .fa-search
 {
-    visibility: hidden;
+    display: none;
 }
 
 /*-----Nouvelles règles si la fenêtre fait au plus 375px de large ---------*/
@@ -209,13 +208,20 @@ ul a:hover
 {
     /*First mouse button for the big screen hidden*/
     #btnSearchBar
-    {     
-        visibility: hidden; /*Hides the reserach button we could also use (transform: scale(0);)*/
+    {   
+        display: none; /*Hides the reserach button we could also use (transform: scale(0);)*/    
     }
      
+    #btnSearchBarSmall
+    {
+        display: inline-flex;
+        background: white;
+        border: 0px;
+    }
+
     .fa-search
     {   
-        visibility: visible;
+        display: flex;
         background-color:#0065FC;
         color: white;
         border-radius: 10px 10px 10px 10px;
@@ -372,9 +378,10 @@ ul
 .sectionContainer
 {
     background-color: #F2F2F2;
-    max-width: 70%;
+    width: 70%;
     border-radius: 30px;
-    padding-bottom: 20px;
+    padding: 20px;
+    margin-right: 25px;
 }
 
 
@@ -435,29 +442,20 @@ h2
     /*Main container For the Hero and Aside part*/
     .divMainContainer
     {
-        max-width: 100%;
+        width: 100%;
         flex-flow: column wrap;
         justify-content: center;
     }
-
+  
     /*Section container size and background*/
     .sectionContainer
     {
-        background-color: #F2F2F2;
-        max-width: 100%;
-        border-radius: 30px;
-        padding-bottom: 20px;
-        margin-left: 0px;
-    }
-    /*Section container size and background*/
-    .sectionContainer
-    {
-        background-color: white; /*Changed*/
-        max-width: 100%;
+        background-color: white;
+        width: 100%;
         border-radius: 0px;
-        padding-bottom: 0px;
-        margin-left: 0px;
-        order: 2;
+        padding: 0px;
+        margin-right: 0px;
+        order: 2
     }
     
     /*Apply flexbox layout to thunmbnail container*/
@@ -521,11 +519,12 @@ h2
         justify-content: space-between;
         
     }
+
     /*Section container size and background*/
     .sectionContainer
     {
         background-color: white; /*Changed*/
-        max-width: 0%;
+        width: 0%;
         border-radius: 0px;
         padding-bottom: 0px;
         margin-left: 0px;
@@ -539,7 +538,6 @@ h2
         flex-direction: column;
         padding: 0px;
     }
-
 
     /*Create vignette*/
     .imgContainer
@@ -589,7 +587,7 @@ h2
 .asideContainer
 {
     background-color: #F2F2F2;
-    max-width: 40%;
+    width: 30%;
     border-radius: 30px;
 }
 
@@ -598,7 +596,6 @@ h2
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
     padding: 5px 20px 20px 20px;
 }
 
@@ -648,23 +645,20 @@ h2 i
     color: black;
 }
 
-@media screen and (max-width: 1261px)
+@media screen and (max-width: 1437px)
 {
+    .asideContainer
+    {
+        background-color: white;   
+        width: 100%;  
+        border-radius: 0px;
+    }
+
     .popularThumbnailContainer
     {
-        display: flex;
         flex-flow: column wrap;
         justify-content: space-between;
         align-content: center;
-        height: 100%;
-        padding: 5px 20px 20px 20px;
-    }
-    .asideContainer
-    {
-        background-color: white;
-        max-width: 768px;
-        border-radius: 0px;
-        width: 768px;
     }
 
     .popularThumbnailContainer
@@ -713,10 +707,9 @@ h2 i
 {
     .asideContainer
     {
+        width: 100%;
         background-color: #F2F2F2;
-        max-width: 375px;
         border-radius: 0px;
-        width: 375px;
     }
 
     .popularThumbnailContainer
@@ -727,14 +720,15 @@ h2 i
 
     .popularImgContainer
     {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         border-radius: 30px;
         width: 350px;
         height: 190px;
         background-color: white;
         padding: 5px;
         margin-bottom: 50px;
-        display: flex;
-        flex-direction: row;
     }
     
     .imgPopular
@@ -786,6 +780,7 @@ h2 i
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
+    margin: 10px;
 }
 
 /*Styling the big containers*/
@@ -800,6 +795,7 @@ h2 i
     width: 300px; /* width of container */
     height: 400px; /* height of container */
     /*overflow: hidden; Everything that goes out of the container will be hidden*/
+    margin: 10px;
 
 }
 
@@ -808,9 +804,7 @@ h2 i
     border-radius: 30px 30px 0px 0px;
     width: 300px;
     height: 350px;
-
-    object-fit: cover;
-    /*object-position: 20% 10px;*/
+    object-fit: cover; /*object-position: 20% 10px;*/
 }
 
 /*Styling the big containers in the column*/
@@ -820,12 +814,11 @@ h2 i
     -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
     box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-    
     width: 300px;
     height: 200px;
     /*overflow: hidden; Everything that goes out of the container will be hidden*/    
-
     border-radius: 30px;
+    margin: 10px;
 }
 
 /*Styling the image for the big containers in the column*/
@@ -845,11 +838,11 @@ h2 i
     -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
     box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-
     border-radius: 30px;
     width: 300px;
     height: 150px;
     overflow: hidden; /*Everything that goes out of the container will be hidden*/
+    margin: 10px; 
 }
 
 /*Styling the image for the small big containers in the column*/
@@ -881,7 +874,6 @@ section div a div p
     color: black;
 }
 
-/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
 @media screen and (max-width: 768px)
 {
     /*This styles the div that contains all the thumnails*/
@@ -978,7 +970,6 @@ section div a div p
         border-radius: 30px 30px 0px 0px;
         width: 300px;
         height: 150px;
-
         object-fit: cover;
     }
 
@@ -1091,12 +1082,10 @@ section div a div p
 
 footer
 {
-    max-width: 100%;
-    background-color: #e8e8e8;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    width: 100%;
+    background-color: #e8e8e8; 
 }
 
 footer div
@@ -1123,19 +1112,27 @@ footer ul li a
     color: black;
 }
 
-/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
+
 @media screen and (max-width: 768px)
 {
     footer
     {
         flex-flow: column wrap;
     }  
+    /*Spaces the footer*/
+    .footerSpacement
+    {
+        padding-left: 40px;
+    }
+
+    footer h2
+    {
+        padding-left: 40px;
+    }
 }
 
-/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
 @media screen and (max-width: 375px)
 {
-
     /*Spaces the footer*/
     .footerSpacement
     {
