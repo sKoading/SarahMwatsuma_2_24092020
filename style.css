@@ -93,8 +93,20 @@ nav ul a:hover
     padding-top: 45px;
 }
 
+.navigationMenuSmall ul a
+{
+    color: black;
+}
+
 @media screen and (max-width: 535px)
 {
+    /*ul menu behavior*/
+    .navigationMenu
+    {
+        padding-right: 20px;
+        margin-bottom: 20px;
+    }
+
     .navigationMenu a
     {
         padding-right: 10px;
@@ -108,30 +120,45 @@ nav ul a:hover
     .navigationMenuSmall
     { 
         display: flex;
-        flex-direction: row;
+        padding-top: 10px;
     }
 
     .navigationMenuSmall ul
     {
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         width: 100%;
         list-style-type: none;
+        display:table; /*Used to strech list items <li> to fill the dith of <ul>*/
+        padding:0;
+        margin:0;
     }
+
+    .navigationMenuSmall ul li
+    {
+        align-content: center;
+        display: table-cell; /*Used to strech list items <li> to fill the dith of <ul>*/
+        align-items: stretch;
+    }
+
     .registration
     {
         padding-top: 30px;
     }
-    ul a:hover
+    .navigationMenuSmall ul a:hover
     {
         border-top: 0px;
     }
      
-    ul li:hover
+    .navigationMenuSmall ul li:hover
     {
         color: #0065FC;
         border-bottom: 2px solid #0065FC;
+    }
+
+    .navigationMenuSmall ul a:hover
+    {
+        color: #0065FC;
     }
 }
 
@@ -237,7 +264,11 @@ nav ul a:hover
     }
 }
 /**********************************************************************************FILTERS*****************************************************************************/
-
+.filtres form
+{
+    display: flex;
+    align-items: center;
+}
 /*This is the flexbox containing the different filter buttons*/
 form ul
 {
@@ -390,7 +421,7 @@ form ul li i
 }
 
 /*This styles the afficher plus*/
-.divMainContainer section a
+.hebergementsLink
 {
     font-weight: bold;
     color: black;
@@ -582,7 +613,7 @@ form ul li i
     border-radius: 30px;
     width: 300px; /* width of container */
     height: 400px; /* height of container */
-    padding: 10px;
+    margin: 10px;
 }
 
 /*This is the image in the etiquettes*/
@@ -732,6 +763,7 @@ footer
 /*This is the flex item of the footer container*/
 footer div 
 {
+    margin-top: 30px;
     flex-grow: 1;
 }
 
