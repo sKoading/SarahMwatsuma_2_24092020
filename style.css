@@ -1,7 +1,4 @@
-/*Tout mettre en camel case, alléger css avec nom de la classe suivi de paragraphe -> utiliser les selecteurs multiples*/
-
-/************************************************************************************COMMON*************************************************************/
-
+/************************************************************************************COMMON****************************************************************************/
 /*Import Raleway font*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -10,16 +7,11 @@
 html, body
 {
     width: 100%;
+    height: 100%;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0; /*The body element generally has an 8px margin by default in some browsers so you need to control it in your own stylesheet instead and set it 
     to what you want. Historically some browsers used padding and some used margin and some applied them to the html element instead of body. */
-}
-
-body
-{
-    width: 100%; 
-    height: 100%; 
 }
 
 /*Take off the underlining of the links*/
@@ -28,7 +20,12 @@ a
     text-decoration: none;
 }
 
-/************************************************************************************WRAPPER**************************************************************/
+ul
+{
+    text-decoration: none;
+}
+
+/************************************************************************************WRAPPER***************************************************************************/
 
 #wrapper
 {
@@ -43,7 +40,7 @@ a
     }
 }
 
-/************************************************************************************MENU**************************************************************/
+/************************************************************************************MENU******************************************************************************/
 
 .navigationMenu a
 {
@@ -96,29 +93,31 @@ nav ul a:hover
     padding-top: 45px;
 }
 
-/*-----Nouvelles règles si la fenêtre fait au plus 375px de large---------*/
 @media screen and (max-width: 535px)
 {
+    .navigationMenu a
+    {
+        padding-right: 10px;
+    }
+
     .navigationMenu ul
     {
-        display: none; /*Cacher qqch*/
+        display: none; /*Ne pas faire apparaître cet élément*/
     }
 
     .navigationMenuSmall
     { 
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
     }
 
     .navigationMenuSmall ul
     {
-        width: 100%;
-        list-style-type: none;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
         justify-content: space-evenly;
+        width: 100%;
+        list-style-type: none;
     }
     .registration
     {
@@ -136,8 +135,9 @@ nav ul a:hover
     }
 }
 
-/***********************************************************************************SEARCH**************************************************************/
+/***********************************************************************************SEARCH*****************************************************************************/
 
+/*Blue Search Button*/
 #btnSearchBar
 {
     border-radius: 0px 10px 10px 0px;
@@ -146,29 +146,32 @@ nav ul a:hover
     height: 35px;
     background-color: #0065FC;
     color: white;
-    margin: 0px; /*Changed*/
+    margin: 0px;
 }
 
-/*Second mouse button for the smartphone screen is hidden when not iphone size*/
+/*Icon mouse button for the smartphone screen - Is larger than iphone size*/
 #btnSearchBarSmall
 {
     display: none;
 }
 
+/*This is the entire search bar as a form*/
 .formA
 {
     display: flex;
 }
 
+/*This is then input of the search bar*/
 .formA input
 {
     font-weight: bold;
     height: 35px;
     border: #eaeaec;
-    margin: 0px; /*Changed*/
+    margin: 0px;
     padding-left: 10px;
 }
 
+/*This is the geolocalisatin icon*/
 .fa-map-marker-alt
 {
     background-color: #eaeaec;
@@ -179,39 +182,36 @@ nav ul a:hover
     padding-top: 10px;
 }
 
-
 /*Change the placeholder color for all browser*/
-
 ::placeholder 
 { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
     opacity: 1; /* Firefox */
 }
-
 :-ms-input-placeholder 
 { /* Internet Explorer 10-11 */
     color: black;
 }
-
 ::-ms-input-placeholder 
 { /* Microsoft Edge */
     color: black;
 }
-  
+
+/*Blue search button with research icon - Hidden at higher than 375px*/
 .fa-search
 {
     display: none;
 }
 
-/*-----Nouvelles règles si la fenêtre fait au plus 375px de large ---------*/
 @media screen and (max-width: 375px)
 {
-    /*First mouse button for the big screen hidden*/
+    /*Blue Search Button*/
     #btnSearchBar
     {   
-        display: none; /*Hides the reserach button we could also use (transform: scale(0);)*/    
+        display: none; /*Hides the blue reserach button*/
     }
-     
+    
+    /*Icon mouse button for the smartphone screen - Is larger than iphone size*/
     #btnSearchBarSmall
     {
         display: inline-flex;
@@ -219,6 +219,13 @@ nav ul a:hover
         border: 0px;
     }
 
+    /*This is the entire search bar as a form*/
+    .formA
+    {
+        align-content: center;
+    }
+
+    /*Blue search button with research icon - Unhidden at 375px*/
     .fa-search
     {   
         display: flex;
@@ -228,22 +235,51 @@ nav ul a:hover
         padding:9px;
         width: 20px;
     }
-
 }
-/**********************************************************************************FILTERS**************************************************************/
+/**********************************************************************************FILTERS*****************************************************************************/
 
+/*This is the flexbox containing the different filter buttons*/
+form ul
+{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+/*This is the round button of the filter*/
+form ul i
+{
+    background-color: #DEEBFF;
+    border-radius: 50px;
+    color: #0065FC;
+    
+}
+
+/*This is the li section for each complete filter button - This puts a space between every filter button. TO use when the size is big*/
+form ul li
+{
+    padding-right: 20px;
+}
+
+/*This is the icon image inside of the round button*/
+form ul li i
+{
+    padding:12px;
+}
+
+/*This is the buttons of the filters, shaped like a pill*/
 .btnFilter
 {
     background-color:white;
     padding-right: 10px;
     padding-left: 0px;
-    border-radius: 40px;
+    border-radius: 50px;
     border: 1px solid #F2F2F2;
     font-weight: bold;
     height: 40px;
 }
 
-/*Button when hovered*/
+/*This is the buttons of the filters, shaped like a pill - When hovered*/
 .btnFilter:hover
 {
     background-color: #DEEBFF;
@@ -255,79 +291,7 @@ nav ul a:hover
     height: 40px;
 }
 
-.filtres h1
-{
-    margin-top: 50px;
-}
-
-/*Style for the title Filtres*/
-.caption
-{
-    padding-top: 12px;
-    font-weight: bold;
-}
-
-form ul
-{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-}
-
-/*Style for the icons*/
-form ul i
-{
-    background-color: #DEEBFF;
-    border-radius: 50px;
-    color: #0065FC;
-}
-
-form ul li i
-{
-    padding:12px;
-}
-
-
-form li
-{
-    margin-right: 20px;
-}
-
-/*---Nouvelles règles si la fenêtre fait au plus 375px de large -----*/
-@media screen and (max-width: 375px)
-{
-    form ul
-    {
-        width: 280px;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        list-style-type: none;
-    }
-
-    form li
-    {
-        margin-right: 0px;
-    }
-
-    form ul li
-    {
-        padding: 5px;
-        list-style-type: none;
-    }
-    .filtres h1
-    {
-        font-size: 22px;
-    }
-
-    .textInfo
-    {
-        margin-bottom: 80px;
-    }
-}
-/************************************************************************************INFOS**************************************************************/
-
+/*This is the round button circling the info icon*/
 .filtres p i
 {
     background-color: white;
@@ -337,7 +301,26 @@ form li
     border: 1px #eaeaec solid;
 }
 
-/*---Nouvelles règles si la fenêtre fait au plus 375px de large -----*/
+@media screen and (max-width: 689px)
+{
+    /*This is the flexbox containing the different filter buttons*/
+    form ul
+    {
+        flex-wrap: wrap;
+    }
+
+    /*This is the li section for each complete filter button - This puts a space between every filter button. TO use when the size is big*/
+    form ul li
+    {
+        padding-right: 10px;
+    }
+
+    /*This is the information text located bellow the filter buttons*/
+    .textInfo
+    {
+        margin-bottom: 40px;
+    }
+}
 @media screen and (max-width: 375px)
 {
     .textInfo
@@ -346,35 +329,17 @@ form li
     }
 }
 
-/************************************************************************************HERO**************************************************************/
+/************************************************************************************HERO******************************************************************************/
 
-/*Main container*/
+/*This is the container that contains the hero and the aside*/
 .divMainContainer
 {
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-/*Styles the full stars*/
-.fa-star
-{
-    color:#0065FC;
-}
-
-/*Styles the empty stars*/
-.unactiveStar
-{
-    color:#eaeaec;
-}
-
-ul
-{
-    text-decoration: none;
-}
-
-/*Section container size and background*/
+/*This is the container that contains Hébergement à Marseille... - It's located inside the divMainContainer*/
 .sectionContainer
 {
     background-color: #F2F2F2;
@@ -384,8 +349,7 @@ ul
     margin-right: 25px;
 }
 
-
-/*Apply flexbox layout to thunmbnail container*/
+/*This is the container for the etiquettes*/
 .thumbnailContainer
 {
     display: inline-flex;
@@ -395,13 +359,7 @@ ul
     padding-right: 40px;
 }
 
-.divMainContainer h2
-{
-    padding-top: 20px;
-    padding-left: 40px;
-}
-
-/*Create vignette*/
+/*This is the container of each etiquettes*/
 .imgContainer
 {
     /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
@@ -416,7 +374,7 @@ ul
     margin-bottom: 50px;
 }
 
-/*Modify the image inside of the thunmbnail*/
+/*This is the image part of the etiquette*/
 .imgHebergements
 {
     width: 300px;
@@ -425,21 +383,34 @@ ul
     object-fit: cover;
 }
 
-/*Hébérgement paragraphe align to the center*/
+/*This is the text part of the etiquette*/
 .pHebergements
 {
     text-align: left;
 }
 
+/*This styles the afficher plus*/
 .divMainContainer section a
 {
     font-weight: bold;
     color: black;
 }
 
+/*This styles the stars that are active*/
+.fa-star
+{
+    color:#0065FC;
+}
+
+/*This style the start that are unactive*/
+.unactiveStar
+{
+    color:#eaeaec;
+}
+
 @media screen and (max-width: 1437px)
 {
-    /*Main container For the Hero and Aside part*/
+    /*This is the container that contains the hero and the aside*/
     .divMainContainer
     {
         width: 100%;
@@ -447,7 +418,7 @@ ul
         justify-content: center;
     }
   
-    /*Section container size and background*/
+    /*This is the container that contains Hébergement à Marseille... - It's located inside the divMainContainer*/
     .sectionContainer
     {
         background-color: white;
@@ -455,167 +426,78 @@ ul
         border-radius: 0px;
         padding: 0px;
         margin-right: 0px;
-        order: 2
+        order: 2;
     }
     
-    /*Apply flexbox layout to thunmbnail container*/
+    /*This is the container for the etiquettes*/
     .thumbnailContainer
     {
-        display: flex;
         flex-flow: row wrap;
-        padding: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
-    /*Create vignette*/
+    /*This is the container of each etiquettes*/
     .imgContainer
     {
-        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
-        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
-        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-        border-radius: 30px;
         width: 350px;
-        background-color: white;
-        padding: 5px;
-        margin-bottom: 50px;
     }
 
-    /*Modify the image inside of the thunmbnail*/
+    /*This is the image part of the etiquette*/
     .imgHebergements
     {
         width: 350px;
         height: 130px;
-        border-radius: 30px 30px 0px 0px;
-        object-fit: cover;
-    }
-
-    /*Defines the margin of the Afficher plus link*/
-    .sectionContainer a
-    {
-        margin-left: 0px;
-    }
-
-    .hebergementsLink
-    {
-        display: inline-flex;
-        width: 100px;
-    }
-
-    .divMainContainer h2
-    {
-        padding-top: 20px;
-        padding-left: 0px;
-        border: 2px solid pink; /*CORRIGER*/
     }
 }
 
 @media screen and (max-width: 375px)
 {
-    /*Main container For the Hero and Aside part*/
+    /*This is the container that contains the hero and the aside*/
     .divMainContainer
     {
-        display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        
-    }
-
-    /*Section container size and background*/
-    .sectionContainer
-    {
-        background-color: white; /*Changed*/
-        width: 0%;
-        border-radius: 0px;
-        padding-bottom: 0px;
-        margin-left: 0px;
-        order: 2;
+        justify-content: space-between;      
     }
     
-    /*Apply flexbox layout to thunmbnail container*/
+    /*This is the container for the etiquettes*/
     .thumbnailContainer
     {
-        display: flex;
         flex-direction: column;
-        padding: 0px;
-    }
-
-    /*Create vignette*/
-    .imgContainer
-    {
-        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
-        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
-        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-        border-radius: 30px;
-        width: 350px;
-        background-color: white;
-        padding: 5px;
-        margin-bottom: 50px;
-    }
-
-    /*Modify the image inside of the thunmbnail*/
-    .imgHebergements
-    {
-        width: 350px;
-        height: 130px;
-        border-radius: 30px 30px 0px 0px;
-        object-fit: cover;
-    }
-
-    /*Defines the margin of the Afficher plus link*/
-    .sectionContainer a
-    {
-        margin-left: 10px;
-    }
-
-    .hebergementsLink
-    {
-        display: inline-flex;
-        width: 100px;
-    }
-
-    h2
-    {
-        padding-top: 20px;
-        padding-left: 0px;
-        /*width: 330px; CORRIGER*/
     }
 }
+/**********************************************************************************ASIDE********************************************************************************/
 
-/**********************************************************************************ASIDE**************************************************************/
-
+/*This is the main container Les plus populaires*/ /*TAG*/
 .asideContainer
 {
     background-color: #F2F2F2;
     width: 30%;
     border-radius: 30px;
-}
-
-.popularThumbnailContainer
-{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 5px 20px 20px 20px;
 }
 
+/*This is the etiquette in full*/
 .popularImgContainer
 {
     /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
     -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
     box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-
+    display: flex;
+    flex-direction: row;
     border-radius: 30px;
     width: 350px;
     height: 200px;
     background-color: white;
     padding: 5px;
     margin-bottom:50px;
-    display: flex;
-    flex-direction: row;
 }
 
+/*This is the image part of the etiquette*/
 .imgPopular
 {
     width: 170px;
@@ -624,166 +506,72 @@ ul
     object-fit: cover;
 }
 
-/*Hébérgement paragraphe align to the left*/
+/*This is the text part of the etiquette*/
 .pPopular
 {
     text-align: left;
     margin-left: 20px;
 }
 
-/*Graph icon position on the popular h2 heading*/
-h2 i
-{
-    position: relative;
-    /* Adjust these values accordingly */
-    top: 5px;
-    left: 50px;
-}
-
+/*This is the graph icon of the les plus populaires*/
 #graphIcon
 {
+    position: relative;
+    top: 5px;
+    left: 50px;
     color: black;
 }
 
 @media screen and (max-width: 1437px)
 {
+    /*This is the container for the aside - Les plus populaires*/
     .asideContainer
     {
-        background-color: white;   
-        width: 100%;  
-        border-radius: 0px;
-    }
-
-    .popularThumbnailContainer
-    {
-        flex-flow: column wrap;
-        justify-content: space-between;
+        flex-wrap: wrap;
         align-content: center;
-    }
-
-    .popularThumbnailContainer
-    {  
-        height: 0%;
-        padding-left: 7px;
-    }
-
-    .popularImgContainer
-    {
-        border-radius: 30px;
-        width: 350px;
-        height: 190px;
         background-color: white;
-        padding: 5px;
-        margin-bottom: 50px;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .imgPopular
-    {
-        width: 170px;
-        height: 190px;
-        border-radius: 30px 0px 0px 30px;
-        object-fit: cover;
-    }
-    /*Hébérgement paragraphe align to the left*/
-    .pPopular
-    {
-        text-align: left;
-        margin-left: 20px;
-    }
-    /*Graph icon position on the popular h2 heading*/
-
-    h2 i
-    {
-        position: relative;
-        /* Adjust these values accordingly */
-        top: 5px;
-        left: 50px;
+        width: 100%;
+        border-radius: 0px;
+        padding: 0px;
     }
 }
 
 @media screen and (max-width: 375px)
 {
+    /*This is the container for the aside - Les plus populaires*/
     .asideContainer
     {
-        width: 100%;
         background-color: #F2F2F2;
-        border-radius: 0px;
-    }
-
-    .popularThumbnailContainer
-    {  
-        height: 0%;
-        padding-left: 7px;
-    }
-
-    .popularImgContainer
-    {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        border-radius: 30px;
-        width: 350px;
-        height: 190px;
-        background-color: white;
-        padding: 5px;
-        margin-bottom: 50px;
-    }
-    
-    .imgPopular
-    {
-        width: 170px;
-        height: 190px;
-        border-radius: 30px 0px 0px 30px;
-        object-fit: cover;
-    }
-    /*Hébérgement paragraphe align to the left*/
-    .pPopular
-    {
-        text-align: left;
-        margin-left: 20px;
-    }
-    /*Graph icon position on the popular h2 heading*/
-
-    h2 i
-    {
-        position: relative;
-        /* Adjust these values accordingly */
-        top: 5px;
-        left: 50px;
     }
 }
 
-/**********************************************************************************ACTIVITES***********************************************************/
+/**********************************************************************************ACTIVITES****************************************************************************/
 
-/*Creates a margin bewteen the activites and the footer*/
+/*This contains everything that is section of Activités à Marseille*/
 #activites
 {
     margin-bottom: 50px;
 }
 
-/*This styles the div that contains all the thumnails*/
+/*This contains only the etiquettes of Activités à Marseille*/
 .thumbnailActivitiesContainer
 {
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
     justify-content: space-between;
 }
 
-
-/*Creating a column flexbox for the image container 2*/
+/*This are the containers for the etiquettes by two*/
 .flexActivitiesImgContainer2
 {
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: space-between;
     margin: 10px;
 }
 
-/*Styling the big containers*/
+/*This are the containers for the etiquettes by one*/
 .activitesImgContainer
 {
     /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
@@ -794,20 +582,19 @@ h2 i
     border-radius: 30px;
     width: 300px; /* width of container */
     height: 400px; /* height of container */
-    /*overflow: hidden; Everything that goes out of the container will be hidden*/
-    margin: 10px;
-
+    padding: 10px;
 }
 
+/*This is the image in the etiquettes*/
 .activitesImgContainer img
 {
     border-radius: 30px 30px 0px 0px;
     width: 300px;
     height: 350px;
-    object-fit: cover; /*object-position: 20% 10px;*/
+    object-fit: cover;
 }
 
-/*Styling the big containers in the column*/
+/*This is the larger of the two etiquettes set*/
 .activitesImgContainer2
 {
     /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
@@ -821,17 +608,16 @@ h2 i
     margin: 10px;
 }
 
-/*Styling the image for the big containers in the column*/
+/*This is the picture of the larger of the two etiquettes set*/
 .activitesImgContainer2 img
 {
     border-radius: 30px 30px 0px 0px;
     width: 300px;
     height: 150px;
-
     object-fit: cover;
 }
 
-/*Styling the Small containers in the column*/
+/*This is the thinner of the two etiquettes set*/
 .activitesImgContainer3
 {
     /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
@@ -842,32 +628,33 @@ h2 i
     width: 300px;
     height: 150px;
     overflow: hidden; /*Everything that goes out of the container will be hidden*/
-    margin: 10px; 
+    margin: 10px;
 }
 
-/*Styling the image for the small big containers in the column*/
+/*This is the picture of the thinner of the two etiquettes set*/
 .activitesImgContainer3 img
 {
     border-radius: 30px 30px 0px 0px;
     width: 300px;
     height: 100px;
-
     object-fit: cover;
 }
 
-
+/*This is the picture of the big etiquettes*/
 .imgActivites
 {
     width: 150px;
     height: 130px;
 }
 
+/*This is the pictures of the two sets of two etiquettes*/
 .imgActivites2
 {
     width: 150px;
     height: 130px;
 }
 
+/*This is the text for all the etiquettes*/
 section div a div p
 {
     padding-left: 20px;
@@ -876,210 +663,63 @@ section div a div p
 
 @media screen and (max-width: 768px)
 {
-    /*This styles the div that contains all the thumnails*/
+    /*This contains only the etiquettes of Activités à Marseille*/
     .thumbnailActivitiesContainer
     {
-        flex-flow: column wrap;
+        flex-direction: column;
         align-content: center;
         padding-left: 5px;
     }
     
-    /*Creating a column flexbox for the image container 2*/
+    /*This are the containers for the two etiquettes*/
     .flexActivitiesImgContainer2
     {
-        flex-flow: column wrap;
         align-content: center;
-        margin-bottom: 10px;
     }
 
-
-    /*Styling the big containers*/
+    /*This are the containers for the etiquettes by one*/
     .activitesImgContainer
-    {
-        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
-        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
-        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-
-        border-radius: 30px;
-        width: 300px;
+    {    
         height: 200px;
-        /*overflow: hidden; Everything that goes out of the container will be hidden*/
-
         margin-bottom: 30px;
     }
 
+    /*This is the image in the etiquettes*/
     .activitesImgContainer img
     {
-        border-radius: 30px 30px 0px 0px;
-        width: 300px;
         height: 150px;
-
-        object-fit: cover;
-        /*object-position: 20% 10px;*/
     }
 
-
-    /*Styling the big containers in the column*/
+    /*This is the larger of the two etiquettes set*/
     .activitesImgContainer2
     {
-        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
-        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
-        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-        
-        width: 300px;
-        height: 200px;
-        /*overflow: hidden; Everything that goes out of the container will be hidden*/    
-
         margin-bottom: 30px;
-        border-radius: 30px;
     }
 
-    /*Styling the image for the big containers in the column*/
-    .activitesImgContainer2 img
-    {
-        border-radius: 30px 30px 0px 0px;
-        width: 300px;
-        height: 150px;
-
-        object-fit: cover;
-    }
-
-
-
-    /*Styling the Small containers in the column*/
+    /*This is the thinner of the two etiquettes set*/
     .activitesImgContainer3
     {
-        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
-        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
-        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-
-        border-radius: 30px;
-        width: 300px;
         height: 200px;
-        overflow: hidden; /*Everything that goes out of the container will be hidden*/
-
         margin-bottom: 30px;
     }
 
-    /*Styling the image for the small big containers in the column*/
+    /*This is the picture of the thinner of the two etiquettes set*/
     .activitesImgContainer3 img
     {
-        border-radius: 30px 30px 0px 0px;
-        width: 300px;
         height: 150px;
-        object-fit: cover;
     }
-
 }
 
-/*---------- Nouvelles règles si la fenêtre fait au plus 375px de large --------------*/
 @media screen and (max-width: 375px)
 {
-  
-    /*This styles the div that contains all the thumnails*/
-    .thumbnailActivitiesContainer
-    {
-        flex-direction: column;
-        
-        align-content: center;
-        padding-left: 5px;
-    }
-
-    /*Creating a column flexbox for the image container 2*/
+    /*This are the containers for the two etiquettes*/
     .flexActivitiesImgContainer2
     {
         margin-bottom: 30px;
     }
-
-
-    /*Styling the big containers*/
-    .activitesImgContainer
-    {
-        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
-        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
-        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-
-        border-radius: 30px;
-        width: 300px;
-        height: 200px;
-        /*overflow: hidden; Everything that goes out of the container will be hidden*/
-
-        margin-bottom: 30px;
-    }
-
-    .activitesImgContainer img
-    {
-        border-radius: 30px 30px 0px 0px;
-        width: 300px;
-        height: 150px;
-
-        object-fit: cover;
-        /*object-position: 20% 10px;*/
-    }
-
-
-    /*Styling the big containers in the column*/
-    .activitesImgContainer2
-    {
-        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
-        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
-        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-        
-        width: 300px;
-        height: 200px;
-        /*overflow: hidden; Everything that goes out of the container will be hidden*/    
-
-        margin-bottom: 30px;
-        border-radius: 30px;
-    }
-
-    /*Styling the image for the big containers in the column*/
-    .activitesImgContainer2 img
-    {
-        border-radius: 30px 30px 0px 0px;
-        width: 300px;
-        height: 150px;
-
-        object-fit: cover;
-    }
-
-
-
-    /*Styling the Small containers in the column*/
-    .activitesImgContainer3
-    {
-        /*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
-        -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-        -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
-        box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-
-        border-radius: 30px;
-        width: 300px;
-        height: 200px;
-        overflow: hidden; /*Everything that goes out of the container will be hidden*/
-
-        margin-bottom: 30px;
-    }
-
-    /*Styling the image for the small big containers in the column*/
-    .activitesImgContainer3 img
-    {
-        border-radius: 30px 30px 0px 0px;
-        width: 300px;
-        height: 150px;
-
-        object-fit: cover;
-    }
-
 }
-
-/**********************************************************************************FOOTER**************************************************************/
-
+/**********************************************************************************FOOTER*******************************************************************************/
+/*This is the container of the footer*/
 footer
 {
     display: flex;
@@ -1088,35 +728,43 @@ footer
     background-color: #e8e8e8;
     padding: 0 40px;
 }
- 
-footer div {
+
+/*This is the flex item of the footer container*/
+footer div 
+{
     flex-grow: 1;
 }
- 
+
+/*This is the h2 title for every paragraph of the footer*/
 footer h2
 {
     font-size: 15px;
     font-weight: bold;
 }
- 
-footer ul {
+
+/*This is the paragaphs of the footer*/
+footer ul 
+{
     padding: 0;
 }
- 
+
+/*This is each lines of the paragaphs of the footer*/
 footer ul li
 {
     list-style-type: none;
     font-size: 15px;
     padding-top: 10px;
 }
+
+/*This is each lines of the paragaphs of the footer a*/
 footer ul li a
 {
     color: black;
 }
  
- 
 @media screen and (max-width: 768px)
 {
+    /*This is the container of the footer*/
     footer
     {
         flex-direction: column;
