@@ -37,6 +37,7 @@ ul
     #wrapper
     {
         padding: 0 0px;
+        margin-top: 0px;
     }
 }
 
@@ -121,6 +122,7 @@ nav ul a:hover
     { 
         display: flex;
         padding-top: 10px;
+        text-align: center;
     }
 
     .navigationMenuSmall ul
@@ -139,6 +141,7 @@ nav ul a:hover
         align-content: center;
         display: table-cell; /*Used to strech list items <li> to fill the dith of <ul>*/
         align-items: stretch;
+        padding-bottom: 10px;  
     }
 
     .registration
@@ -196,6 +199,7 @@ nav ul a:hover
     border: #eaeaec;
     margin: 0px;
     padding-left: 10px;
+    justify-content: center;
 }
 
 /*This is the geolocalisatin icon*/
@@ -209,7 +213,7 @@ nav ul a:hover
     padding-top: 10px;
 }
 
-/*Change the placeholder color for all browser*/
+/*****Change the placeholder color for all browser*****/
 ::placeholder 
 { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
@@ -230,26 +234,51 @@ nav ul a:hover
     display: none;
 }
 
-@media screen and (max-width: 375px)
+@media screen and (max-width: 376px)
 {
+    /*This styles the text - Trouvez votre hébergement pour...*/
+    .filtres h1
+    {
+        font-size: 20px;;
+        padding-left: 20px;
+        width: 310px;
+    }
+
+    /*This styles the text - En plein centre... and Plus de 500 logements*/
+    .filtres p
+    {
+        font-size: 15px;
+        padding-left: 20px;
+        width: 310px;
+    }
+
     /*Blue Search Button*/
     #btnSearchBar
     {   
         display: none; /*Hides the blue reserach button*/
     }
     
-    /*Icon mouse button for the smartphone screen - Is larger than iphone size*/
+    /*This is the icon mouse button for the smartphone screen - Is larger than iphone size*/
     #btnSearchBarSmall
     {
         display: inline-flex;
         background: white;
         border: 0px;
+        padding: 0px;
     }
 
     /*This is the entire search bar as a form*/
     .formA
     {
-        align-content: center;
+        padding: 20px;
+    }
+
+    /*This is then input of the search bar*/
+    .formA input
+    {
+        font-size: 15px;
+        height: 35px;
+        width: 250px;
     }
 
     /*Blue search button with research icon - Unhidden at 375px*/
@@ -261,14 +290,16 @@ nav ul a:hover
         border-radius: 10px 10px 10px 10px;
         padding:9px;
         width: 20px;
+        height: 20px;
     }
 }
 /**********************************************************************************FILTERS*****************************************************************************/
-.filtres form
+.formB
 {
     display: flex;
     align-items: center;
 }
+
 /*This is the flexbox containing the different filter buttons*/
 form ul
 {
@@ -308,6 +339,7 @@ form ul li i
     border: 1px solid #F2F2F2;
     font-weight: bold;
     height: 40px;
+    margin-bottom: 10px;
 }
 
 /*This is the buttons of the filters, shaped like a pill - When hovered*/
@@ -334,10 +366,19 @@ form ul li i
 
 @media screen and (max-width: 689px)
 {
+    /*This contains the whole filter with the filter text*/
+    .formB
+    {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+
     /*This is the flexbox containing the different filter buttons*/
-    form ul
+    .formB ul
     {
         flex-wrap: wrap;
+        padding-left: 0;
     }
 
     /*This is the li section for each complete filter button - This puts a space between every filter button. TO use when the size is big*/
