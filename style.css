@@ -43,9 +43,11 @@ ul
 
 /************************************************************************************MENU******************************************************************************/
 
+/*These are the a of the menus*/
 .navigationMenu a
 {
     padding-right: 50px;
+    color: black;
 }
 
 /*Apply flexbox layout to menu container*/
@@ -99,7 +101,15 @@ nav ul a:hover
     color: black;
 }
 
-@media screen and (max-width: 535px)
+@media screen and (max-width: 768px)
+{
+    nav img
+    {
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width: 552px)
 {
     /*ul menu behavior*/
     .navigationMenu
@@ -128,10 +138,8 @@ nav ul a:hover
     .navigationMenuSmall ul
     {
         display: flex;
-        justify-content: space-between;
         width: 100%;
         list-style-type: none;
-        display:table; /*Used to strech list items <li> to fill the dith of <ul>*/
         padding:0;
         margin:0;
     }
@@ -139,9 +147,9 @@ nav ul a:hover
     .navigationMenuSmall ul li
     {
         align-content: center;
-        display: table-cell; /*Used to strech list items <li> to fill the dith of <ul>*/
-        align-items: stretch;
-        padding-bottom: 10px;  
+        padding-bottom: 10px;
+        width:50%;
+        border-bottom: 2px solid #eaeaec;
     }
 
     .registration
@@ -228,10 +236,31 @@ nav ul a:hover
     color: black;
 }
 
-/*Blue search button with research icon - Hidden at higher than 375px*/
+/*Blue search button with research icon - Hidden at higher than 376px*/
 .fa-search
 {
     display: none;
+}
+
+@media screen and (max-width: 768px)
+{
+    /*This styles the text - Trouvez votre hébergement pour...*/
+    .filtres h1
+    {
+        padding-left: 20px;
+    }
+
+    /*This styles the text - En plein centre... and Plus de 500 logements*/
+    .filtres p
+    {
+        padding-left: 20px;
+    }
+
+    /*This is the entire search bar as a form*/
+    .formA
+    {
+        padding: 20px;
+    }
 }
 
 @media screen and (max-width: 376px)
@@ -281,7 +310,7 @@ nav ul a:hover
         width: 250px;
     }
 
-    /*Blue search button with research icon - Unhidden at 375px*/
+    /*Blue search button with research icon - Unhidden at 376px*/
     .fa-search
     {   
         display: flex;
@@ -364,6 +393,15 @@ form ul li i
     border: 1px #eaeaec solid;
 }
 
+@media screen and (max-width: 768px)
+{
+    /*This contains the whole filter with the filter text*/
+    .formB
+    {
+        padding-left: 20px;
+    }
+}
+
 @media screen and (max-width: 689px)
 {
     /*This contains the whole filter with the filter text*/
@@ -390,14 +428,28 @@ form ul li i
     /*This is the information text located bellow the filter buttons*/
     .textInfo
     {
+        display: flex;
+        align-items: baseline;
         margin-bottom: 40px;
     }
 }
-@media screen and (max-width: 375px)
+@media screen and (max-width: 376px)
 {
     .textInfo
-    {
+    {   
         font-size: 14px;
+    }
+
+    /*This is the round button circling the info icon*/
+    .filtres p i
+    {
+        padding: 3px 7px 3px 7px;
+        margin-right: 10px;
+    }
+
+    .textInfo .fa-info
+    {
+        font-size: 10px;
     }
 }
 
@@ -421,7 +473,7 @@ form ul li i
     margin-right: 25px;
 }
 
-/*This is the container for the etiquettes*/
+/*This is the container for all the etiquettes*/
 .thumbnailContainer
 {
     display: inline-flex;
@@ -438,12 +490,12 @@ form ul li i
     -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
     box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-
     border-radius: 30px;
     width: 300px;
     background-color: white;
     padding: 5px;
     margin-bottom: 50px;
+    margin-right: 10px;
 }
 
 /*This is the image part of the etiquette*/
@@ -523,7 +575,7 @@ form ul li i
     }
 }
 
-@media screen and (max-width: 375px)
+@media screen and (max-width: 376px)
 {
     /*This is the container that contains the hero and the aside*/
     .divMainContainer
@@ -537,19 +589,52 @@ form ul li i
     {
         flex-direction: column;
     }
+
+
+    /*This is the container of each etiquettes*/
+    .imgContainer
+    {
+        margin-left: 15px;
+        margin-bottom: 20px;
+        width: 330px;
+        height: 190px;
+    }
+
+    /*This is the image part of the etiquette*/
+    .imgHebergements
+    {
+        width: 330px;
+        height: 110px;
+    }
+
+    .divMainContainer .sectionContainer h2
+    {
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    /*This styles the afficher plus*/
+    .hebergementsLink
+    {
+        margin-left: 20px;
+    }
 }
 /**********************************************************************************ASIDE********************************************************************************/
 
-/*This is the main container Les plus populaires*/ /*TAG*/
+/*This is the main container Les plus populaires*/
 .asideContainer
 {
     background-color: #F2F2F2;
     width: 30%;
     border-radius: 30px;
+    padding: 5px 20px 20px 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 5px 20px 20px 20px;
+}
+
+.popularThumbnailContainer h2
+{
+    margin-top: 40px;;
 }
 
 /*This is the etiquette in full*/
@@ -563,17 +648,19 @@ form ul li i
     flex-direction: row;
     border-radius: 30px;
     width: 350px;
-    height: 200px;
+    height: 150px;
     background-color: white;
     padding: 5px;
-    margin-bottom:50px;
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 /*This is the image part of the etiquette*/
 .imgPopular
 {
     width: 170px;
-    height: 200px;
+    height: 150px;
     border-radius: 30px 0px 0px 30px;
     object-fit: cover;
 }
@@ -583,6 +670,7 @@ form ul li i
 {
     text-align: left;
     margin-left: 20px;
+    height: 90px;
 }
 
 /*This is the graph icon of the les plus populaires*/
@@ -590,7 +678,7 @@ form ul li i
 {
     position: relative;
     top: 5px;
-    left: 50px;
+    left: 130px;
     color: black;
 }
 
@@ -608,12 +696,36 @@ form ul li i
     }
 }
 
-@media screen and (max-width: 375px)
+@media screen and (max-width: 376px)
 {
     /*This is the container for the aside - Les plus populaires*/
     .asideContainer
     {
         background-color: #F2F2F2;
+    }
+
+
+    /*This is the etiquette in full*/
+    .popularImgContainer
+    {
+        width: 330px;
+        height: 150px;
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+
+    /*This is the image part of the etiquette*/
+    .imgPopular
+    {
+        width: 130px;
+        height: 150px;
+    }
+
+    /*This is the graph icon of the les plus populaires*/
+    #graphIcon
+    {
+        left: 80px;
     }
 }
 
@@ -622,7 +734,16 @@ form ul li i
 /*This contains everything that is section of Activités à Marseille*/
 #activites
 {
+    width: 100%;
+    margin-top: 50px;
     margin-bottom: 50px;
+}
+
+/*This styles the h2 called Activités à Marseille*/
+#activites h2
+{
+    margin-left: 20px;
+    font-size: 20px;
 }
 
 /*This contains only the etiquettes of Activités à Marseille*/
@@ -650,7 +771,6 @@ form ul li i
     -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    1px 1px 3px 3px #e8e8e8;  /* Firefox 3.5 - 3.6 */
     box-shadow:         1px 1px 3px 3px #e8e8e8;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
-
     border-radius: 30px;
     width: 300px; /* width of container */
     height: 400px; /* height of container */
@@ -751,43 +871,70 @@ section div a div p
 
     /*This are the containers for the etiquettes by one*/
     .activitesImgContainer
-    {    
-        height: 200px;
-        margin-bottom: 30px;
+    {   
+        width: 340px;
+        height: 180px;
+        margin-right: 20px;
+        margin-top: 10px;
+        padding-top: 0px;
     }
 
     /*This is the image in the etiquettes*/
     .activitesImgContainer img
     {
-        height: 150px;
+        width: 340px;
+        height: 130px;
     }
 
     /*This is the larger of the two etiquettes set*/
     .activitesImgContainer2
     {
-        margin-bottom: 30px;
+        width: 340px;
+        height: 180px;
+        margin-bottom: 10px;
+    }
+
+    /*This is the picture of the larger of the two etiquettes set*/
+    .activitesImgContainer2 img
+    {
+        width: 340px;
+        height: 130px;
     }
 
     /*This is the thinner of the two etiquettes set*/
     .activitesImgContainer3
     {
-        height: 200px;
-        margin-bottom: 30px;
+        width: 340px;
+        height: 180px;
     }
 
     /*This is the picture of the thinner of the two etiquettes set*/
     .activitesImgContainer3 img
     {
-        height: 150px;
+        width: 340px;
+        height: 130px;
+    }
+
+    /*This are the containers for the etiquettes by two*/
+    .flexActivitiesImgContainer2
+    {
+        margin: 0px;
     }
 }
 
-@media screen and (max-width: 375px)
+@media screen and (max-width: 376px)
 {
+    /*This contains only the etiquettes of Activités à Marseille*/
+    .thumbnailActivitiesContainer
+    {
+        width: 100%;
+    }
+
     /*This are the containers for the two etiquettes*/
     .flexActivitiesImgContainer2
     {
-        margin-bottom: 30px;
+        margin-bottom: 0px;
+        margin: 0px;
     }
 }
 /**********************************************************************************FOOTER*******************************************************************************/
